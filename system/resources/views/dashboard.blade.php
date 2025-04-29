@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="QAC.png">
+
+    <!-- Google Font: Playfair Display SC -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/QAC.png" />
+    <!-- Tab/Window Title -->
+    <title>PUPQAC - Document Archiving and Control System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleTracking(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle("hidden");}
+    </script>
+</head>
+
+<body class="bg-gray-100 h-screen overflow-hidden">
+        <!-- Header -->
+        <header class="bg-red-900 text-white p-4 pl-12 fixed w-full top-0 fixed top-0 left-0 right-0 h-[130px] shadow z-20 flex items-center px-4 flex justify-between items-center">
+            <!-- Logo and title -->
+            <div class="flex items-center gap-4">
+                <!-- Logo Image -->
+                <img src="{{asset('images/Chief_images/QAC.jpeg')}}" alt="QAC_Logo" class="h-[80px] w[80px] object-contain" />
+        
+                <!-- Title -->
+                <div class="pl-5 mt-2">
+                    <div class="text-md text-[25px] -mb-3" style="font-family: 'Playfair Display SC', serif;">Quality Assurance Center</div>
+                    <div class="text-[40px] font-bold mb-1">Document Archiving and Control System</div>
+                </div>
+            </div>
+        
+            <!-- Notification and profile -->
+            <div class="flex items-center gap-4">
+                <!-- Notification Icon -->
+                <button class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
+                <i class="fas fa-bell text-2xl"></i>
+                </button>
+            
+                <!-- Settings Icon -->
+                <a href="{{ route('profile1') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fas fa-cog text-2xl"></i>
+                </a>
+            
+                <!-- User Info -->
+                <div class="flex items-center gap-2">
+                <div class="flex flex-col leading-tight text-white text-right">
+                    <span class="font-medium">Admin</span>
+                    <span class="text-sm text-gray-200 text-center">Special/Chief Admin</span>
+                </div>
+                <img src="{{asset('images/Chief_images/AdminProfile.png')}}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+                </div>
+            </div>
+        </header> 
+
+        <!-- Sidebar -->
+        <aside class="h-screen w-64  bg-white text-black p-5 fixed h-full bg-black shadow-[4px_0_6px_-1px_rgba(0,0,0,0.1)] z-10 pt-[157px] fixed top-0 left-0 h-screen z-10 overflow-y-auto"">
+            <nav class="ml-2">
+                <ul>
+                    <ul>
+                        <!-- Dashboard -->
+                        <ul>
+                            <!-- Dashboard -->
+                            <li class="mb-4">
+                                <a href="#" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                        <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zm0 10h8v8h-8v-8zm-10 0h8v8H3v-8z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Dashboard</span>
+                                </a>
+                            </li>
+
+                            <!-- Document -->
+                            <li class="mb-4">
+                                <a href="{{ route('documents') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                        <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.83a2 2 0 0 0-.59-1.42l-4.83-4.83A2 2 0 0 0 13.17 1H6zm7 0v5h5L13 2zM8 10h8v2H8v-2zm0 4h8v2H8v-2z"/>
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Documents</span>
+                                  </a>
+                            </li>
+
+                            <!-- Request --> 
+                            <li class="mb-4">
+                                <a href="{{ route('request')  }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800">
+                                        <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+                                        <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Request</span> 
+                                </a>
+                                </li>
+
+                            <!-- Events -->
+                            <li class="mb-4">
+                                <a href="{{ route('event') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0.3" stroke="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Events</span>
+                                </a>
+                            </li>
+
+                            <!-- Users -->
+                            <li class="mb-4">
+                              <a href="{{ route('users2') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800 ml-[3px]" viewBox="0 0 24 24">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <line x1="20" y1="8" x2="20" y2="14" />
+                                    <line x1="17" y1="11" x2="23" y2="11" /></svg>
+                                  <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Users</span>
+                              </a>
+                            </li>
+
+                            <!-- Report -->
+                            <li class="mb-4">
+                                <a href="{{ route('report') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800">
+                                        <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Report</span>
+                                </a>
+                            </li>
+
+                            <!-- History -->
+                            <li class="mb-4">
+                                <a href="{{ route('history') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0.4" stroke="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                    <path d="M13 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">History</span>
+                                </a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <a href="{{ route('bin') }}" class="absolute inset-x-6 bottom-[110px] ml-1 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke-width="2" 
+                        stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2" />
+                    </svg>
+                    <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Bin</span>
+                </a>
+                <form method="POST" action="{{ route('logout') }}" class="absolute inset-x-6 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                @csrf
+                <a href="{{ route('login1') }}" class="flex items-center space-x-4">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke-width="2" 
+                        stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
+                    </svg>
+                    <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Log Out</span>
+                </a>
+              </form>                 
+            </aside>
+            
+<main class="ml-64 mt-[130px] h-[calc(100vh-130px)] overflow-y-auto p-6 space-y-6">
+<!-- Dashboard Content Area -->
+<div class="p-6 space-y-6">
+    <!-- Dashboard Header Section -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- Welcome Card (takes 3/4 of the width on md+) -->
+      <div class="md:col-span-3 bg-[#7A0C0C] text-white pl-10 pr-4 py-8 rounded-2xl shadow-md text-left">
+        <h2 class="text-4xl font-bold tracking-wide">Welcome to the QAC Dashboard!</h2>
+        <p class="text-lg mt-2">Here, you can archive your documents at ease.</p>
+      </div>
+
+      <!-- Mini Chart Card (takes 1/4 of the width on md+) -->
+      <div class="bg-white rounded-2xl shadow-md p-4 pl-6">
+        <h4 class="text-md font-semibold mb-2">Chart Title</h4>
+        <canvas id="miniChart" class="w-full h-32"></canvas>
+      </div>
+    </div>
+      
+      
+    <!-- Summary Cards (Same size as Mini Chart Card) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div class="bg-white p-4 rounded-2xl shadow-md md:col-span-1 pb-20 flex flex-col justify-between">
+        <p class="text-md mb-[10px] font-semibold text-gray-600">PENDING REQUEST</p>
+        <p class="text-3xl mb-[15px] font-semibold">23</p>
+        <p class="text-md text-black">⬆ 1.10% Since yesterday</p>
+      </div>
+      <div class="bg-white p-4 rounded-2xl shadow-md md:col-span-1 pb-20 flex flex-col justify-between">
+        <p class="text-md mb-[10px] font-semibold text-gray-600">COPC</p>
+        <p class="text-3xl mb-[15px] font-semibold">97</p>
+        <p class="text-md text-black">⬆ 1.10% Since yesterday</p>
+      </div>
+      <div class="bg-white p-4 rounded-2xl shadow-md md:col-span-1 pb-20 flex flex-col justify-between">
+        <p class="text-md mb-[10px] font-semibold text-gray-600">USER</p>
+        <p class="text-3xl mb-[15px] font-semibold">15</p>
+        <p class="text-md text-black">⬆ 1.10% Since yesterday</p>
+      </div>
+    </div>
+
+    <!-- Main Chart -->
+    <div class="bg-white rounded-2xl shadow-md p-4 dashboard-container">
+      <h4 class="text-md font-semibold mb-4 ml-2">Chart Title</h4>
+      <canvas id="mainChart" style="height: 400px !important; width: 100% !important;"></canvas>
+    </div>
+  
+    <!-- Bottom Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Recents -->
+      <div class="col-span-2 space-y-4">
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+          <div class="flex items-center space-x-2 pl-4 mb-2">
+            <h4 class="text-[30px] font-bold tracking-wide">Recents</h4>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-red-900" viewBox="0 0 24 24" fill="currentcolor" stroke="currentColor" stroke-width="1">
+              <path d="M9.682,18.75a.75.75,0,0,1,.75-.75,8.25,8.25,0,1,0-6.189-2.795V12.568a.75.75,0,0,1,1.5,0v4.243a.75.75,0,0,1-.751.75H.75a.75.75,0,0,1,0-1.5H3a9.75,9.75,0,1,1,7.433,3.44A.75.75,0,0,1,9.682,18.75Zm2.875-4.814L9.9,11.281a.754.754,0,0,1-.22-.531V5.55a.75.75,0,1,1,1.5,0v4.889l2.436,2.436a.75.75,0,1,1-1.061,1.06Z" transform="translate(1.568 2.25)" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            
+          </div>
+          
+        
+          <!-- Header Row -->
+          <div class="flex text-lg font-semibold pl-4 pr-6 text-gray-500 border-b pb-2 pt-[10px]">
+            <span class="w-1/2">File Name</span>
+            <span class="w-1/4">Modified By</span>
+            <span class="w-1/4 text-right">Date</span>
+          </div>
+        
+          <!-- File Rows -->
+          <div class="text-[17px] space-y-[20px] pl-4 pr-6">
+            <div class="flex pt-4 ">
+              <span class="w-1/2">Bachelor of Science in Physics 2022-23.pdf</span>
+              <span class="w-1/4">Paul Bacon</span>
+              <span class="w-1/4 text-right">24/02/2025</span>
+            </div>
+            <div class="flex">
+              <span class="w-1/2">Bachelor of Science in Chemistry 2022-23.pdf</span>
+              <span class="w-1/4">Jane Smith</span>
+              <span class="w-1/4 text-right">22/01/2025</span>
+            </div>
+            <div class="flex">
+              <span class="w-1/2">Bachelor of Science in Biology 2022-23.pdf</span>
+              <span class="w-1/4">Alex Turner</span>
+              <span class="w-1/4 text-right">10/12/2024</span>
+            </div>
+        
+            <!-- See More Link -->
+            <a href="#" class="block text-right text-red-900 text-md font-bold pt-3 underline">See More</a>
+          </div>
+        </div>
+        
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+          <h4 class="text-[30px] font-bold tracking-wide mb-2 pl-4">Recieved Files</h4>
+        
+          <!-- Header Row -->
+          <div class="flex text-lg font-semibold pl-4 pr-6 text-gray-500 border-b pb-2 pt-[10px]">
+            <span class="w-1/2">File Name</span>
+            <span class="w-1/4">Size</span>
+            <span class="w-1/4 text-right">Date</span>
+          </div>
+        
+          <!-- File Rows -->
+          <div class="text-[17px] space-y-[20px] pl-4 pr-6">
+            <div class="flex pt-4 ">
+              <span class="w-1/2">Bachelor of Science in Physics 2024-25.pdf</span>
+              <span class="w-1/4">1.2mb</span>
+              <span class="w-1/4 text-right">24/02/2025</span>
+            </div>
+            <div class="flex">
+              <span class="w-1/2">BSED Major in Science 2024-25.pdf</span>
+              <span class="w-1/4">3.6mb</span>
+              <span class="w-1/4 text-right">22/01/2025</span>
+            </div>
+            <div class="flex">
+              <span class="w-1/2">Bachelor of Science in Entrepreneurship 2024-25.pdf</span>
+              <span class="w-1/4">1.8mb</span>
+              <span class="w-1/4 text-right">10/12/2024</span>
+            </div>
+        
+            <!-- See More Link -->
+            <a href="#" class="block text-right text-red-900 text-md font-bold pt-3 underline">See More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Calendar + Events -->
+      <div class="space-y-4">
+        <div class="bg-white rounded-[20px] border border-[#7A0C0C] p-6 shadow-md">
+            <h4 class="text-lg font-semibold mb-4 tracking-wide">January</h4>
+          
+            <!-- Days of the week -->
+            <div class="text-sm text-gray-600 grid grid-cols-7 text-center mb-2">
+              <span>M</span><span>T</span><span>W</span><span>TH</span><span>F</span><span>S</span><span>S</span>
+            </div>
+          
+            <!-- Calendar Days -->
+            <div class="text-sm text-gray-800 grid grid-cols-7 gap-y-3 text-center">
+              <!-- Padding to align start on Monday -->
+              <span class="text-gray-400">01</span>
+              <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mx-auto">02</span>
+              <span>03</span><span>04</span><span>05</span><span>06</span><span>07</span>
+              <span>08</span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+              <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+              <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+              <span>29</span><span>30</span><span>31</span><span class="text-gray-300">01</span><span class="text-gray-300">02</span><span class="text-gray-300">03</span><span class="text-gray-300">04</span>
+            </div>
+            <!-- Legend -->
+            <div class="mt-8 flex justify-center gap-6 text-sm text-gray-700">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                PSV Meetings
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 bg-[#7A0C0C] rounded-full"></span>
+                COPC Meetings
+              </div>
+            </div>
+          </div>          
+          <div class="bg-white p-12 rounded-2xl shadow-md">
+            <h4 class="text-[30px] font-bold tracking-wide mb-[29px] -mt-4 ">Events</h4>
+          
+            <!-- Event 1 -->
+            <div class="flex border border-yellow-400 rounded-xl overflow-hidden mb-3 shadow-md">
+              <div class="bg-yellow-50 text-yellow-700 px-4 py-3 text-sm font-semibold w-[150px] flex items-center justify-center border-r border-yellow-400">
+                January 16, 2025
+              </div>
+              <div class="flex items-center px-4 py-3 text-sm">
+                Preliminary Survey Visit of San Juan
+              </div>
+            </div>
+          
+            <!-- Event 2 -->
+            <div class="flex border border-red-700 rounded-xl overflow-hidden mb-3 shadow-md">
+              <div class="bg-white text-red-700 px-4 py-3 text-sm font-semibold w-[150px] flex items-center justify-center border-r border-red-700">
+                January 23, 2025
+              </div>
+              <div class="flex items-center px-4 py-3 text-sm">
+                COPC Accreditation of MAPES
+              </div>
+            </div>
+          
+            <!-- Event 3 (Same as Event 2) -->
+            <div class="flex border border-red-700 rounded-xl overflow-hidden shadow-md">
+              <div class="bg-white text-red-700 px-4 py-3 text-sm font-semibold w-[150px] flex items-center justify-center border-r border-red-700">
+                January 23, 2025
+              </div>
+              <div class="flex items-center px-4 py-3 text-sm">
+                COPC Accreditation of MAPES
+              </div>
+            </div>
+          </div>          
+      </div>
+
+      <!-- Steps/FAQS Button-->
+      <button id="toggle-request-steps" ></button>
+
+      <div id="request-steps" class="fixed bottom-32 right-16 bg-white shadow-lg p-8 rounded-lg w-90 border border-gray-300 hidden">
+        <div class="flex justify-between items-center border-b pb-2">
+          <h3 class="font-extrabold text-red-800 mb-4 text-[15px] text-xl"> 4 EASY STEPS <br/> TO CREATE A REQUEST</h3>
+          <button id="close-request-steps" class="text-gray-600 -mt-10 mb-4 hover:text-red-800 text-3xl font-bold">&times;</button>
+        </div>
+      <div class="mt-7 text-gray-800 text-md">
+        <p class="font-bold">STEP 1</p>
+        <p>Click the <strong>“Request Now”</strong> button.</p>
+
+        <p class="font-bold mt-5">STEP 2</p>
+        <p>Fill out the request form.</p>
+
+        <p class="font-bold mt-5">STEP 3</p>
+        <p>Click the <strong>“Submit”</strong> button.</p>
+
+        <p class="font-bold mt-5">STEP 4</p>
+        <p>Track & Review your Document.</p>
+
+        <p class="text-gray-500 italic text-xs mt-7 text-center">
+            Fast, Simple, Hassle-Free – Get Your Documents in a Click!
+        </p>
+    </div>
+    </div>
+  </div>
+  
+  <!-- Chart.js CDN and Script -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+
+    document.getElementById('toggle-request-steps').addEventListener('click', function() {
+      document.getElementById('request-steps').classList.toggle('hidden');
+      });
+      document.getElementById('close-request-steps').addEventListener('click', function() {
+          document.getElementById('request-steps').classList.add('hidden');
+      });
+
+    const ctxMain = document.getElementById('mainChart').getContext('2d');
+    new Chart(ctxMain, {
+      type: 'bar',
+      data: {
+        labels: ['Preview A', 'Preview B', 'Preview C', 'Preview D', 'Preview E', 'Preview F'],
+        datasets: [
+          {
+            label: 'COPC',
+            data: [3.5, 3.5, 9.1, 5.1, 6.3, 7.3],
+            backgroundColor: '#7A0C0C'
+          },
+          {
+            label: 'User',
+            data: [1, 3, 6.5, 4.8, 7, 5.3],
+            backgroundColor: '#F3C613'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+    });
+  
+    const ctxMini = document.getElementById('miniChart').getContext('2d');
+    new Chart(ctxMini, {
+      type: 'bar',
+      data: {
+        labels: ['A', 'B', 'C', 'D', 'E', 'F'],
+        datasets: [{
+          label: 'Sample',
+          data: [1, 2, 4.9, 3, 5.1, 1],
+          backgroundColor: '#7A0C0C'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: { display: false },
+          y: { display: false }
+        }
+      }
+    });
+  </script>
+</main>
+    </body>
+</html>
+

@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="QAC_Logo.png">
+
+    <!-- Google Font: Playfair Display SC -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/QAC.png">
+    <!-- Tab/Window Title -->
+    <title>PUPQAC - Document Archiving and Control System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleTracking(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle("hidden");}
+    </script>
+</head>
+
+<body class="bg-gray-100 h-screen overflow-hidden">
+        <!-- Header -->
+        <header class="bg-red-900 text-white p-4 pl-12 fixed w-full top-0 fixed top-0 left-0 right-0 h-[130px] shadow z-20 flex items-center px-4 flex justify-between items-center">
+            <!-- Logo and title -->
+            <div class="flex items-center gap-4">
+                <!-- Logo Image -->
+                <img src="{{asset('images/Chief_images/QAC.jpeg')}}" alt="QAC Logo" class="h-[80px] w[80px] object-contain" />
+        
+                <!-- Title -->
+                <div class="pl-5 mt-2">
+                    <div class="text-md text-[25px] -mb-3" style="font-family: 'Playfair Display SC', serif;">Quality Assurance Center</div>
+                    <div class="text-[40px] font-bold mb-1">Document Archiving and Control System</div>
+                </div>
+            </div>
+        
+            <!-- Notification and profile -->
+            <div class="flex items-center gap-4">
+                <!-- Notification Icon -->
+                <button class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
+                <i class="fas fa-bell text-2xl"></i>
+                </button>
+            
+                <!-- Settings Icon -->
+                <a href="{{ route('profile1') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fas fa-cog text-2xl"></i>
+                </a>
+            
+                <!-- User Info -->
+              <div class="flex items-center gap-2">
+              <div class="flex flex-col leading-tight text-white text-right">
+                  <span class="font-medium">Luna C.</span>
+                  <span class="text-sm text-gray-200 text-center">Special/Chief Admin</span>
+              </div>
+              <img src="{{asset('images/Chief_images/AdminProfile.png')}}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+              </div>
+            </div>
+        </header> 
+
+        <!-- Sidebar -->
+        <aside class="h-screen w-64  bg-white text-black p-5 fixed h-full bg-black shadow-[4px_0_6px_-1px_rgba(0,0,0,0.1)] z-10 pt-[157px] fixed top-0 left-0 h-screen z-10 overflow-y-auto"">
+            <nav class="ml-2">
+                <ul>
+                    <ul>
+                        <!-- Dashboard -->
+                        <ul>
+                            <!-- Dashboard -->
+                            <li class="mb-4">
+                                <a href="{{ route('dashboard') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                        <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zm0 10h8v8h-8v-8zm-10 0h8v8H3v-8z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Dashboard</span>
+                                </a>
+                            </li>
+
+                            <!-- Document -->
+                            <li class="mb-4">
+                                <a href="{{ route('documents') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                        <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.83a2 2 0 0 0-.59-1.42l-4.83-4.83A2 2 0 0 0 13.17 1H6zm7 0v5h5L13 2zM8 10h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Documents</span>
+                                </a></li>
+
+                            <!-- Request --> 
+                            <li class="mb-4">
+                                <a href="{{ route('request')  }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800">
+                                        <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+                                        <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Request</span> 
+                                </a>
+                                </li>
+
+                            <!-- Events -->
+                            <li class="mb-4">
+                                <a href="{{ route('event') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0.3" stroke="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Events</span>
+                                </a>
+                            </li>
+
+                            <!-- Users -->
+                            <li class="mb-4">
+                              <a href="{{ route('users2') }}" class="flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800 ml-[3px]" viewBox="0 0 24 24">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <line x1="20" y1="8" x2="20" y2="14" />
+                                    <line x1="17" y1="11" x2="23" y2="11" /></svg>
+                                  <span class="text-red-800 text-[21px] font-bold transition-all duration-200">Users</span>
+                              </a>
+                            </li>
+
+                            <!-- Report -->
+                            <li class="mb-4">
+                                <a href="{{ route('report') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800">
+                                        <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Report</span>
+                                </a>
+                            </li>
+
+                            <!-- History -->
+                            <li class="mb-4">
+                                <a href="{{ route('history') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0.4" stroke="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                    <path d="M13 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">History</span>
+                                </a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <a href="{{ route('bin') }}" class="absolute inset-x-6 bottom-[110px] ml-1 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24" stroke-width="2" 
+                    stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
+                <path stroke-linecap="round" stroke-linejoin="round" 
+                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2" />
+                </svg>
+                <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Bin</span>
+                </a> 
+                <form method="POST" action="{{ route('logout') }}" class="absolute inset-x-6 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                @csrf
+                <a href="{{ route('login1') }}" class="flex items-center space-x-4">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke-width="2" 
+                        stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
+                    </svg>
+                    <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Log Out</span>
+                </a>
+              </form>                    
+            </aside>
+            
+          <!-- Main Content with Form -->
+<div class="flex flex-col items-center w-full min-h-screen px-4 md:pl-64 pt-32 md:pt-48">
+  <!-- Title Container -->
+  <div class="bg-yellow-500 p-6 mt-[10px] flex justify-center items-center rounded-t-2xl w-full max-w-6xl min-h-[50px] h-20 md:drop-shadow-lg">
+    <div class="flex-1 text-left text-[25px] tracking-wider font-bold text-white">Add New User</div>
+  </div>
+
+  <div class="flex justify-center items-center w-full px-2">
+    <form class="bg-white p-6 md:p-9 rounded-b-2xl shadow-md w-full max-w-6xl flex flex-col items-center space-y-8">
+      <!-- Photo Upload -->
+      <div class="flex flex-col items-center space-y-4 w-full">
+        <h2 class="text-md font-medium text-gray-800 w-full text-left -mt-[7px] tracking-wide">
+          <i class="fas fa-cloud text-gray-500"></i> Saved
+        </h2>
+      </div>
+
+      <!-- Form Fields Section Centered -->
+      <div class="flex flex-col md:flex-row gap-10 w-full justify-center items-start">
+        <!-- First Column -->
+        <div class="space-y-4 w-full md:w-[45%]">
+          <div>
+            <label class="block text-sm font-medium text-black">First Name *</label>
+            <input type="text"
+              class="mt-2 block w-full rounded-md border-2 border-gray-300 hover:border-red-900 outline-red-800 p-2" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-black">Position *</label>
+            <select
+              class="mt-2 block w-full text-gray-400 rounded-md border-2 border-gray-300 p-[10px] mb-[10px] hover:border-red-900 outline-red-800">
+              <option>Select</option>
+              <option>Client</option>
+              <option>Admin</option>
+              <option>Special Admin/Chief</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-black mt-6">Webmail *</label>
+            <input type="email"
+              class="mt-2 block w-full rounded-md border-2 border-gray-300 hover:border-red-900 outline-red-800 p-2" />
+          </div>
+        </div>
+
+        <!-- Second Column -->
+        <div class="space-y-4 w-full md:w-[45%]">
+          <div>
+            <label class="block text-sm font-medium text-black">Last Name *</label>
+            <input type="text"
+              class="mt-2 block w-full rounded-md border-2 border-gray-300 hover:border-red-900 outline-red-800 p-2" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-black mt-[30px]">Department *</label>
+            <input type="text"
+              class="mt-2 block w-full rounded-md border-2 border-gray-300 hover:border-red-900 outline-red-800 p-2" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-black mt-6">Address *</label>
+            <textarea rows="3"
+              class="mt-2 block w-full rounded-md border-2 border-gray-300 hover:border-red-900 outline-red-800 p-2"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons Left-Aligned -->
+      <div class="w-full flex justify-start pl-10 space-x-4 pt-12">
+        <button type="button"
+          class="px-6 py-2 rounded-full border text-black border-gray-600 hover:bg-gray-200">Save Draft</button>
+        <a href="{{ route('users2') }}"
+          class="px-6 py-2 rounded-full border text-black border-yellow-600 hover:bg-yellow-100">Cancel</a>
+        <button type="submit"
+          class="flex items-center gap-2 px-6 py-2 rounded-full bg-red-800 text-white hover:bg-red-900">
+          Submit
+          <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.5003 12H5.41872M5.24634 12.7972L4.24158 15.7986C3.69128 17.4424 3.41613 18.2643 3.61359 18.7704C3.78506 19.21 4.15335 19.5432 4.6078 19.6701C5.13111 19.8161 5.92151 19.4604 7.50231 18.7491L17.6367 14.1886C19.1797 13.4942 19.9512 13.1471 20.1896 12.6648C20.3968 12.2458 20.3968 11.7541 20.1896 11.3351C19.9512 10.8529 19.1797 10.5057 17.6367 9.81135L7.48483 5.24303C5.90879 4.53382 5.12078 4.17921 4.59799 4.32468C4.14397 4.45101 3.77572 4.78336 3.60365 5.22209C3.40551 5.72728 3.67772 6.54741 4.22215 8.18767L5.24829 11.2793C5.34179 11.561 5.38855 11.7019 5.407 11.8459C5.42338 11.9738 5.42321 12.1032 5.40651 12.231C5.38768 12.375 5.34057 12.5157 5.24634 12.7972Z"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+    </body>
+</html>
