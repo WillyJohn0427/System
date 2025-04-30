@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="QAC_Logo.png">
+
+    <!-- Google Font: Playfair Display SC -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/QAC.png">
+    <!-- Tab/Window Title -->
+    <title>PUPQAC - Document Archiving and Control System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleTracking(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle("hidden");}
+    </script>
+</head>
+
+<body class="bg-gray-100 h-screen overflow-hidden">
+        <!-- Header -->
+        <header class="bg-red-900 text-white p-4 pl-12 fixed w-full top-0 fixed top-0 left-0 right-0 h-[130px] shadow z-20 flex items-center px-4 flex justify-between items-center">
+            <!-- Logo and title -->
+            <div class="flex items-center gap-4">
+                <!-- Logo Image -->
+                <img src="{{asset('images/Chief_images/QAC.jpeg')}}" alt="QAC Logo" class="h-[80px] w[80px] object-contain" />
+        
+                <!-- Title -->
+                <div class="pl-5 mt-2">
+                    <div class="text-md text-[25px] -mb-3" style="font-family: 'Playfair Display SC', serif;">Quality Assurance Center</div>
+                    <div class="text-[40px] font-bold mb-1">Document Archiving and Control System</div>
+                </div>
+            </div>
+        
+            <!-- Notification and profile -->
+            <div class="flex items-center gap-4">
+                <!-- Notification Icon -->
+                <button class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
+                <i class="fas fa-bell text-2xl"></i>
+                </button>
+            
+                <!-- Settings Icon -->
+                <a href="{{ route('profile1') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fas fa-cog text-2xl"></i>
+                </a>
+            
+                <!-- User Info -->
+                <div class="flex items-center gap-2">
+                <div class="flex flex-col leading-tight text-white text-right">
+                    <span class="font-medium">Luna C.</span>
+                    <span class="text-sm text-gray-200 text-center">Special/Chief Admin</span>
+                </div>
+                <img src="{{asset('images/Chief_images/AdminProfile.png')}}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+                </div>
+            </div>
+        </header> 
+
+        <!-- Sidebar -->
+        <aside class="h-screen w-64  bg-white text-black p-5 fixed h-full bg-black shadow-[4px_0_6px_-1px_rgba(0,0,0,0.1)] z-10 pt-[157px] fixed top-0 left-0 h-screen z-10 overflow-y-auto"">
+            <nav class="ml-2">
+                <ul>
+                    <ul>
+                        <!-- Dashboard -->
+                        <ul>
+                            <!-- Dashboard -->
+                            <li class="mb-4">
+                                <a href="{{ route('dashboard') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                        <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zm0 10h8v8h-8v-8zm-10 0h8v8H3v-8z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Dashboard</span>
+                                </a>
+                            </li>
+
+                            <!-- Document -->
+                            <li class="mb-4">
+                                <a href="{{ route('documents') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                        <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.83a2 2 0 0 0-.59-1.42l-4.83-4.83A2 2 0 0 0 13.17 1H6zm7 0v5h5L13 2zM8 10h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Documents</span>
+                                </a></li>
+
+                            <!-- Request --> 
+                            <li class="mb-4">
+                                <a href="{{ route('request')  }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800">
+                                        <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+                                        <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Request</span> 
+                                </a>
+                                </li>
+
+                            <!-- Events -->
+                            <li class="mb-4">
+                                <a href="{{ route('event') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0.3" stroke="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Events</span>
+                                </a>
+                            </li>
+
+                            <!-- Users -->
+                            <li class="mb-4">
+                                <a href="#" class="flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800 ml-[3px]" viewBox="0 0 24 24">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <line x1="20" y1="8" x2="20" y2="14" />
+                                    <line x1="17" y1="11" x2="23" y2="11" /></svg>
+                                  <span class="text-red-800 text-[21px] font-bold transition-all duration-200">Users</span>
+                              </a>
+                            </li>
+
+                            <!-- Report -->
+                            <li class="mb-4">
+                                <a href="{{ route('report') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800">
+                                        <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z" />
+                                    </svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">Report</span>
+                                </a>
+                            </li>
+
+                            <!-- History -->
+                            <li class="mb-4">
+                                <a href="{{ route('history') }}" class="flex items-center space-x-4 p-2 hover:border-red-800 group transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0.4" stroke="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
+                                    <path d="M13 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                                    <span class="text-red-800 text-[20px] group-hover:text-red-800 group-hover:text-[21px] group-hover:font-bold transition-all duration-200">History</span>
+                                </a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <a href="{{ route('bin') }}" class="absolute inset-x-6 bottom-[110px] ml-1 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24" stroke-width="2" 
+                    stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
+                <path stroke-linecap="round" stroke-linejoin="round" 
+                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2" />
+                </svg>
+                <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Bin</span>
+                </a> 
+                <form method="POST" action="{{ route('logout') }}" class="absolute inset-x-6 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                @csrf
+                <a href="{{ route('login1') }}" class="flex items-center space-x-4">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke-width="2" 
+                        stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
+                    </svg>
+                    <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Log Out</span>
+                </a>
+              </form>                    
+            </aside>
+            
+            <div class="flex flex-col w-full min-h-screen px-4 md:pl-[345px] pr-[90px] pt-32 md:pt-48 ">
+              <!-- Search and Add User -->
+              <div class="flex flex-col md:flex-row justify-between items-center mb-6 space-y-4 md:space-y-0">
+                <!-- Custom search bar -->
+                <div class="w-full md:w-1/2 px-0">
+                  <div class="relative">
+                    <input type="text" placeholder="Search for a Person by Name or Email"
+                      class="w-full p-4 pl-16 border border-gray-300 focus:outline-none text-lg rounded-md focus:outline-none focus:ring-1 focus:ring-gray-500" />
+                    <i class="fas fa-search absolute left-[24px] top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer"></i>
+                  </div>
+                </div>
+            
+                <!-- Add New User button -->
+                <a href="{{ route('users') }}" class="bg-white text-yellow-600 font-medium px-4 py-3 rounded-full hover:bg-yellow-500 hover:text-black hover:border-black transition-all text-[14px] flex items-center gap-1 border border-yellow-500">
+                    Add New User
+                    <span class="text-xl leading-none">+</span>
+                </a>
+              </div>
+            
+              <!-- User Table -->
+              <div class="overflow-x-auto bg-white rounded-md cursor-pointer">
+                <table class="min-w-full divide-y divide-gray-200 ">
+                  <tbody class="divide-y divide-gray-200 text-sm">
+                    <!-- Example row -->
+                    <tr>
+                      <td class="px-6 py-5 flex items-center space-x-2 text-[16px]">
+                        <img src="https://i.pravatar.cc/40" alt="avatar" class="w-8 h-8 rounded-full" />
+                        <span>Kristin Watson</span>
+                      </td>
+                      <td class="px-6 py-6 text-[16px]">Chairperson</td>
+                      <td class="px-6 py-6 text-[16px]">QAC</td>
+                      <td class="px-6 py-6 text-[16px]">michelle.rivera@example.com</td>
+                      <td class="px-6 py-6 text-[16px]">June 09, 2000</td>
+                      <td class="px-6 py-6 text-[16px]">Admin</td>
+                      <td class="px-6 py-6 text-center flex justify-center space-x-4">
+                        <!-- Edit Button -->
+                        <a href="{{ route('users3') }}" class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 21H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M20.0651 7.39423L7.09967 20.4114C6.72438 20.7882 6.21446 21 5.68265 21H4.00383C3.44943 21 3 20.5466 3 19.9922V18.2987C3 17.7696 3.20962 17.2621 3.58297 16.8873L16.5517 3.86681C19.5632 1.34721 22.5747 4.87462 20.0651 7.39423Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3097 5.30981L18.7274 8.72755" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </a>
+            
+                        <!-- Delete Button with Modal Trigger -->
+                        <button onclick="openDeleteModal()" class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="px-6 py-5 flex items-center space-x-2 text-[16px]">
+                        <img src="https://i.pravatar.cc/40" alt="avatar" class="w-8 h-8 rounded-full" />
+                        <span>Kristin Watson</span>
+                      </td>
+                      <td class="px-6 py-6 text-[16px]">Chairperson</td>
+                      <td class="px-6 py-6 text-[16px]">QAC</td>
+                      <td class="px-6 py-6 text-[16px]">michelle.rivera@example.com</td>
+                      <td class="px-6 py-6 text-[16px]">June 09, 2000</td>
+                      <td class="px-6 py-6 text-[16px]">Admin</td>
+                      <td class="px-6 py-6 text-center flex justify-center space-x-4">
+                        <!-- Edit Button -->
+                        <button class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 21H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M20.0651 7.39423L7.09967 20.4114C6.72438 20.7882 6.21446 21 5.68265 21H4.00383C3.44943 21 3 20.5466 3 19.9922V18.2987C3 17.7696 3.20962 17.2621 3.58297 16.8873L16.5517 3.86681C19.5632 1.34721 22.5747 4.87462 20.0651 7.39423Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3097 5.30981L18.7274 8.72755" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </button>
+            
+                        <!-- Delete Button with Modal Trigger -->
+                        <button onclick="openDeleteModal()" class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="px-6 py-5 flex items-center space-x-2 text-[16px]">
+                        <img src="https://i.pravatar.cc/40" alt="avatar" class="w-8 h-8 rounded-full" />
+                        <span>Kristin Watson</span>
+                      </td>
+                      <td class="px-6 py-6 text-[16px]">Chairperson</td>
+                      <td class="px-6 py-6 text-[16px]">QAC</td>
+                      <td class="px-6 py-6 text-[16px]">michelle.rivera@example.com</td>
+                      <td class="px-6 py-6 text-[16px]">June 09, 2000</td>
+                      <td class="px-6 py-6 text-[16px]">Admin</td>
+                      <td class="px-6 py-6 text-center flex justify-center space-x-4">
+                        <!-- Edit Button -->
+                        <button class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 21H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M20.0651 7.39423L7.09967 20.4114C6.72438 20.7882 6.21446 21 5.68265 21H4.00383C3.44943 21 3 20.5466 3 19.9922V18.2987C3 17.7696 3.20962 17.2621 3.58297 16.8873L16.5517 3.86681C19.5632 1.34721 22.5747 4.87462 20.0651 7.39423Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3097 5.30981L18.7274 8.72755" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </button>
+            
+                        <!-- Delete Button with Modal Trigger -->
+                        <button onclick="openDeleteModal()" class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="px-6 py-5 flex items-center space-x-2 text-[16px]">
+                        <img src="https://i.pravatar.cc/40" alt="avatar" class="w-8 h-8 rounded-full" />
+                        <span>Kristin Watson</span>
+                      </td>
+                      <td class="px-6 py-6 text-[16px]">Chairperson</td>
+                      <td class="px-6 py-6 text-[16px]">QAC</td>
+                      <td class="px-6 py-6 text-[16px]">michelle.rivera@example.com</td>
+                      <td class="px-6 py-6 text-[16px]">June 09, 2000</td>
+                      <td class="px-6 py-6 text-[16px]">Admin</td>
+                      <td class="px-6 py-6 text-center flex justify-center space-x-4">
+                        <!-- Edit Button -->
+                        <button class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 21H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M20.0651 7.39423L7.09967 20.4114C6.72438 20.7882 6.21446 21 5.68265 21H4.00383C3.44943 21 3 20.5466 3 19.9922V18.2987C3 17.7696 3.20962 17.2621 3.58297 16.8873L16.5517 3.86681C19.5632 1.34721 22.5747 4.87462 20.0651 7.39423Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3097 5.30981L18.7274 8.72755" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </button>
+            
+                        <!-- Delete Button with Modal Trigger -->
+                        <button onclick="openDeleteModal()" class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="px-6 py-5 flex items-center space-x-2 text-[16px]">
+                        <img src="https://i.pravatar.cc/40" alt="avatar" class="w-8 h-8 rounded-full" />
+                        <span>Kristin Watson</span>
+                      </td>
+                      <td class="px-6 py-6 text-[16px]">Chairperson</td>
+                      <td class="px-6 py-6 text-[16px]">QAC</td>
+                      <td class="px-6 py-6 text-[16px]">michelle.rivera@example.com</td>
+                      <td class="px-6 py-6 text-[16px]">June 09, 2000</td>
+                      <td class="px-6 py-6 text-[16px]">Admin</td>
+                      <td class="px-6 py-6 text-center flex justify-center space-x-4">
+                        <!-- Edit Button -->
+                        <button class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 21H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M20.0651 7.39423L7.09967 20.4114C6.72438 20.7882 6.21446 21 5.68265 21H4.00383C3.44943 21 3 20.5466 3 19.9922V18.2987C3 17.7696 3.20962 17.2621 3.58297 16.8873L16.5517 3.86681C19.5632 1.34721 22.5747 4.87462 20.0651 7.39423Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3097 5.30981L18.7274 8.72755" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </button>
+            
+                        <!-- Delete Button with Modal Trigger -->
+                        <button onclick="openDeleteModal()" class="text-red-800 hover:text-red-900">
+                          <svg class="h-6 w-6 stroke-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            
+              <!-- See More Button -->
+              <div class="flex justify-end mt-6">
+                <button class="text-red-900 font-semibold hover:underline">See More</button>
+              </div>
+            
+              <!-- Delete Confirmation Modal -->
+              <div id="deleteModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center hidden z-50">
+                <div class="bg-white p-10 rounded-xl shadow-lg text-center w-100 relative">
+                  <h3 class="text-[20px] font-bold text-red-900 tracking-wider mb-4">Do you want to delete it?</h3>
+                  <div class="space-x-4">
+                    <button onclick="confirmDelete()"
+                      class="text-[17px] text-white font-bold bg-red-800 tracking-wider rounded-2xl px-6 py-2 shadow-md">Yes</button>
+                    <button onclick="closeDeleteModal()"
+                      class="text-[17px] text-black font-semibold bg-gray-200 tracking-wider rounded-2xl px-6 py-2 shadow-md">No</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- JavaScript to handle modal -->
+            <script>
+              function openDeleteModal() {
+                document.getElementById('deleteModal').classList.remove('hidden');
+              }
+            
+              function closeDeleteModal() {
+                document.getElementById('deleteModal').classList.add('hidden');
+              }
+            
+              function confirmDelete() {
+                // Add your actual delete logic here (e.g., fetch request or Livewire method)
+                alert("Deleted successfully!");
+                closeDeleteModal();
+              }
+            </script>            
+    </body>
+</html>
