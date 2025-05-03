@@ -120,7 +120,7 @@
         </header> 
 
         <!-- Sidebar -->
-        <aside class="w-64 bg-white text-white p-5 fixed top-[130px] left-0 h-[calc(100vh-130px)] shadow-lg z-10 overflow-y-auto">
+        <aside class="w-64 bg-white text-white p-5 fixed top-[137px] left-0 h-[calc(100vh-130px)] shadow-lg z-10 overflow-y-auto">
             <nav class="ml-2">
                 <ul>
                     <ul>
