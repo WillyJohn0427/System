@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
 
     <!-- Google Font: Playfair Display SC -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="Images/QAC.jpeg">
+    <link rel="icon" type="image/png" href="{{asset('images/Client_images/QAC.jpeg')}}">
     <!-- Tab/Window Title -->
     <title>PUPQAC - Document Archiving and Control System</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,7 +25,7 @@
             <!-- Logo and title -->
             <div class="flex items-center gap-4">
                 <!-- Logo Image -->
-                <img src="Images/QAC.jpeg" alt="QAC Logo" class="h-[80px] w[80px] object-contain" />
+                <img src="{{asset('images/Client_images/QAC.jpeg')}}" alt="QAC Logo" class="h-[80px] w[80px] object-contain" />
         
                 <!-- Title -->
                 <div class="pl-5 mt-2">
@@ -53,11 +52,11 @@
                     <span class="font-medium">Nabila A.</span>
                     <span class="text-sm text-gray-200 text-center">Client</span>
                 </div>
-                <img src="Images/Profile.jpeg" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+                <img src="{{asset('images/Client_images/Profile.jpeg')}}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
                 </div>
             </div>
         </header>
-
+    
        <!-- Sidebar -->
        <aside class="h-screen w-64  bg-white text-black p-5 fixed h-full bg-black shadow-[4px_0_6px_-1px_rgba(0,0,0,0.1)] z-10 pt-[127px] fixed top-0 left-0 h-screen z-10 overflow-y-auto">
         <nav class="mt-5 ml-[5px]">
