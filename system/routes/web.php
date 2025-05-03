@@ -31,6 +31,7 @@ Route::view('/verify1', 'livewire.pages.auth.Landing_VerificationEmail')->name('
 Route::view('/login1', 'livewire.pages.auth.login')->name('login1');
 Route::view('/forgot1', 'livewire.pages.auth.forgot-password')->name('forgot1');
 Route::view('/profile2', 'livewire.pages.auth.Landing_Profile')->name('profile2');
+Route::view('/reset1', 'livewire.pages.auth.Landing_ResetPass')->name('reset1');
 Route::view('/cdashboard', 'livewire.welcome.Client_Dashboard')->middleware('auth')->name('cdashboard');
 Route::view('/Cevent', 'livewire.welcome.Client_Events')->name('Cevent');
 Route::view('/Chistory', 'livewire.welcome.Client_History')->name('Chistory');
