@@ -56,6 +56,7 @@
                     <!-- Main Container Holds Name, Email, Password, Password Confirmation and Buttons -->
                     <form method="POST" action="{{ route('register.store') }}">
                         @csrf
+                        <div class="bg-white pt-[5px] pb-[40px] pr-[100px] pl-[100px] mr-[70px] drop-shadow-md md:drop-shadow-lg rounded-b-2xl rounded-t-2xl w-[550px] text-center mb-[25px] -mt-[10px] w-[550px]">
                         <label class="block ml-[2px] font-bold text-red-900 text-md text-left mt-[25px]">Full Name*</label>
                         <input type="text" name="name" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[7px] mb-[20px] border-red-900 rounded-md" required>
 
@@ -77,24 +78,25 @@
                         @enderror
 
                         <div class="flex justify-center items-center space-x-4 mb-[23px] mt-[11px]">
-                            <button type="submit" class="bg-red-900 text-white py-3 px-5 rounded-xl mt-5 w-[155px] hover:bg-red-950 hover:text-white transition font-semibold">Register</button>
+                            <button type="submit" class="bg-red-900 text-white py-3 px-5 rounded-xl mt-5 w-[155px] hover:bg-red-950 hover:text-white transition font-semibold">Next</button>
                         </div>
                     </form>
 
-                        <!-- Mini Container for return Login Page Option-->
-                        <a class="font-semibold text-lg text-gray-700">Already have an Account?</a>
-                        <a href="{{ route('login1') }}" class=" font-semibold text-lg text-red-900">Login</>
-                    </div>
+                            <!-- Mini Container for return Login Page Option-->
+                            <a class="font-semibold text-lg text-gray-700">Already have an Account?</a>
+                        <a href="{{ route('login1') }}" class=" font-semibold text-lg text-red-900">Login</a>
+                   </div>
+                </div>
 
-                    <!-- Main Footer -->
-                    <div class="fixed bottom-2 mr-[40px] text-center text-gray-600"> 
-                        <p class="text-md ">For other PUP Services, kindly visit our site <a href="https://www.pup.edu.ph" class="text-yellow-500 underline">www.pup.edu.ph</a></p>
-                        <p class="text-sm ">By using this service, you understood and agree to the PUP Online Service</p>
-                        <p class="text-sm "><a href="#" class="text-yellow-500 underline">Terms of Use</a> and  <a href="#" class="text-yellow-500 underline">Privacy Statement</a></p>
-                        <p class="text-xs mt-[20px]">&copy; 2025 Polytechnic University of the Philippines. All Rights Reserved.</p>
-                    </div>
+                <!-- Main Footer -->
+                <div class="fixed bottom-2 right-[126px] text-center text-gray-600"> 
+                    <p class="text-md ">For other PUP Services, kindly visit our site <a href="https://www.pup.edu.ph" class="text-yellow-500 underline">www.pup.edu.ph</a></p>
+                    <p class="text-sm ">By using this service, you understood and agree to the PUP Online Service</p>
+                    <p class="text-sm "><a href="#" class="text-yellow-500 underline">Terms of Use</a> and  <a href="#" class="text-yellow-500 underline">Privacy Statement</a></p>
+                    <p class="text-xs mt-[20px]">&copy; 2025 Polytechnic University of the Philippines. All Rights Reserved.</p>
                 </div>
             </div>
-        </body>
+        </div>
+    </body>
 </html>
 <!-- End of Code -->
