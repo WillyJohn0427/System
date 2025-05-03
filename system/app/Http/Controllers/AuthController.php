@@ -57,4 +57,31 @@ class AuthController extends Controller
         return redirect()->route('cdashboard');
     }
 
+    public function store(Request $request)
+    {
+        // Validate the input
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => [
+                'required',
+                'email',
+                'regex:/^[a-zA-Z0-9._%+-]+@pup\.edu\.ph$/', // Ensure email ends with @pup.edu.ph
+                'unique:users,email', // Ensure email is unique in the users table
+            ],
+            'password' => ['required', 'string', 'min:8', 'confirmed'], // Password confirmation required
+        ]);
+
+        // Create the user
+        $user = User::create([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+        ]);
+
+        // Log the user in
+        Auth::login($user);
+
+        // Redirect to the appropriate dashboard
+        return redirect()->route('cdashboard');
+    }
 }
