@@ -195,7 +195,7 @@
                     <button class="px-4 pr-[187px] py-2 text-lg font-[600] text-white rounded-xl bg-red-900">Profile</button>
                 </div>
                 <div class="flex ml-8 mt-2">
-                    <button class="px-4 pr-[165px] py-2 text-lg font-[600] text-black rounded-xl hover:bg-red-900 transition-all hover:text-white">Password</button>
+                    <a href="{{ route('Cpassword') }}" class="px-4 pr-[164px] py-2 text-lg font-[600] text-black rounded-xl hover:bg-red-900 transition-all hover:text-white">Password</a>
                 </div>
         
                 <!-- Profile Section -->
