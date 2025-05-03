@@ -8,7 +8,7 @@ Route::view('system.test', 'livewire.pages.auth.login')->name('system.test'); //
 Route::post('/register', [AuthController::class, 'store'])->name('register.store'); // Registration route
 
 Route::view('/dashboard', 'dashboard')->middleware('auth')->name('dashboard');
-Route::view('/documents', 'livewire.welcome.Nav_Chief_Documents')->middleware('auth')->name('documents');
+Route::view('/documents', 'livewire.welcome.Nav_Chief_Documents')->name('documents');
 Route::view('/documents2', 'livewire.welcome.Nav_Chief_Documents2')->name('documents2');
 Route::view('/documents3', 'livewire.welcome.Nav_Chief_Documents3')->name('documents3');
 Route::view('/documents4', 'livewire.welcome.Nav_Chief_Documents4')->name('documents4');
@@ -16,7 +16,7 @@ Route::view('/documents5', 'livewire.welcome.Nav_Chief_Documents5')->name('docum
 Route::view('/request', 'livewire.welcome.Nav_Chief_Request')->name('request');
 Route::view('/chief-event2', 'livewire.welcome.Nav_Chief_Event2')->name('chief.event2');
 Route::view('/event', 'livewire.welcome.Nav_Chief_Event')->name('event');
-Route::view('/users', 'livewire.welcome.Nav_Chief_Users')->middleware('auth')->name('users');
+Route::view('/users', 'livewire.welcome.Nav_Chief_Users')->name('users');
 Route::view('/users2', 'livewire.welcome.Nav_Chief_Users2')->name('users2');
 Route::view('/users3', 'livewire.welcome.Nav_Chief_Users3')->name('users3');
 Route::view('/report', 'livewire.welcome.Nav_Chief_Report')->name('report');
