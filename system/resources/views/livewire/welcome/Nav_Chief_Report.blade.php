@@ -9,7 +9,7 @@
 
     <!-- Google Font: Playfair Display SC -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="Images/QAC.png">
+    <link rel="icon" type="image/png" href="{{asset('images/Chief_images/QAC.jpeg')}}">
     <!-- Tab/Window Title -->
     <title>PUPQAC - Document Archiving and Control System</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,8 +20,8 @@
     </script>
 </head>
 
-<body class="bg-gray-100 flex h-screen overflow-hidden">
-        <!-- Header -->
+<body class="bg-gray-100">
+         <!-- Header -->
         <header class="bg-red-900 text-white p-4 pl-12 fixed w-full top-0 fixed top-0 left-0 right-0 h-[130px] shadow z-20 flex items-center px-4 flex justify-between items-center">
             <!-- Logo and title -->
             <div class="flex items-center gap-4">
@@ -35,28 +35,89 @@
                 </div>
             </div>
         
-            <!-- Notification and profile -->
-            <div class="flex items-center gap-4">
-                <!-- Notification Icon -->
-                <button class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
-                <i class="fas fa-bell text-2xl"></i>
-                </button>
-            
-                <!-- Settings Icon -->
-                <a href="{{ route('profile1') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
-                    <i class="fas fa-cog text-2xl"></i>
-                </a>
-            
-                <!-- User Info -->
-                <div class="flex items-center gap-2">
-                <div class="flex flex-col leading-tight text-white text-right">
-                    <span class="font-medium">Luna C.</span>
-                    <span class="text-sm text-gray-200 text-center">Special/Chief Admin</span>
+             <!-- Notification and profile -->
+        <div class="flex items-center gap-4">
+            <!-- Notification Icon -->
+        <div class="relative">
+            <button onclick="toggleDropdown()" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
+            <i class="fas fa-bell text-2xl"></i>
+            <span class="absolute top-[1px] -right-[4px] bg-red-600 text-white text-[15px] font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+            </button>
+    
+            <!-- Main Notification Dropdown -->
+            <div id="notificationDropdown" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg overflow-hidden z-50">
+            <div class="bg-yellow-400 px-4 py-2 font-bold tracking-wide pt-3 pb-3 text-xl text-white">Notifications</div>
+    
+            <!-- "All" and "Unread" Buttons + Three Dot -->
+            <div class="flex justify-between items-center px-4 py-2 relative">
+                <div class="flex gap-4">
+                <button class="font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">All</button>
+                <button class="font-bold text-gray-600 hover:text-black">Unread</button>
                 </div>
-                <img src="{{asset('images/Chief_images/AdminProfile.png')}}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+    
+                <!-- Three Dot Button -->
+                <button id="threeDotButton" onclick="toggleThreeDotDropdown()" class="text-gray-600 hover:text-black relative">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-7 w-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                </button>
+    
+                <!-- Mini Dropdown for Three Dots -->
+                <div id="threeDotDropdown" class="hidden absolute right-0 top-10 w-48 bg-gray-200 border border-gray-300 rounded-lg shadow-lg z-50">
+                <button class="w-full text-left px-4 py-2 hover:bg-red-800 text-black hover:text-white">Mark All as Read</button>
+                <button class="w-full text-left px-4 py-2 hover:bg-red-800 text-black hover:text-white">Turn off Notification</button>
                 </div>
             </div>
-        </header> 
+    
+            <!-- Notifications List -->
+            <div class="divide-y divide-gray-200">
+                <!-- Notification 1 -->
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                <div class="flex-1">
+                    <p class="text-black"><strong>Kevin Mendoza</strong> requested a document.</p>
+                    <p class="text-xs text-gray-400">40 minutes ago</p>
+                </div>
+                <div class="absolute top-4 right-4 h-3 w-3 bg-red-700 rounded-full"></div>
+                </div>
+    
+                <!-- Notification 2 -->
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                <div class="flex-1">
+                    <p class="text-black"><strong>Marynhel Estorninos</strong> requested a document.</p>
+                    <p class="text-xs text-gray-400">1 day ago</p>
+                </div>
+                <div class="absolute top-4 right-4 h-3 w-3 bg-red-700 rounded-full"></div>
+                </div>
+    
+                <!-- Notification 3 -->
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                <div class="flex-1">
+                    <p class="text-gray-500"><strong>Kassandra Denise Serillano</strong> requested a document.</p>
+                    <p class="text-xs text-gray-400">10 hours ago</p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+            <!-- Settings Icon -->
+            <a href="{{ route('profile1') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fas fa-cog text-2xl"></i>
+                </a>
+        
+            <!-- User Info -->
+            <div class="flex items-center gap-2">
+            <div class="flex flex-col leading-tight text-white text-right">
+                <span class="font-medium">Luna C.</span>
+                <span class="text-sm text-gray-200 text-center">Executive</span>
+            </div>
+            <img src="{{asset('images/Chief_images/AdminProfile.png')}}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+            </div>
+        </div>
+        </header>
 
         <!-- Sidebar -->
         <aside class="h-screen w-64  bg-white text-black p-5 fixed h-full bg-black shadow-[4px_0_6px_-1px_rgba(0,0,0,0.1)] z-10 pt-[157px] fixed top-0 left-0 h-screen z-10 overflow-y-auto"">
@@ -144,7 +205,7 @@
                 </svg>
                 <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Bin</span>
                 </a> 
-                <form method="POST" action="{{ route('logout') }}" class="absolute inset-x-6 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                <form method="POST" action="{{ route('logout') }}" class="absolute inset-x-2 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
                 @csrf
                 <a href="{{ route('login1') }}" class="flex items-center space-x-4">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -200,6 +261,27 @@
                     </table>
                 </div>                                
             </div>
+                <script>
+              function openLogoutModal() {
+              document.getElementById('logoutModal').classList.remove('hidden');}
+                                      
+              function closeLogoutModal() {
+              document.getElementById('logoutModal').classList.add('hidden');}
+                                      
+              // Function to handle logout confirmation (this is just a placeholder)
+              function confirmLogout() {
+              alert("You have been logged out!"); 
+              // Example: window.location.href = '/logout';  <-- real logout
+              closeLogoutModal();}
+
+              function toggleDropdown() {
+              document.getElementById('notificationDropdown').classList.toggle('hidden');
+              // When opening notification dropdown, also close 3-dot mini-dropdown
+              document.getElementById('threeDotDropdown').classList.add('hidden');}
+                                      
+              function toggleThreeDotDropdown() {
+              document.getElementById('threeDotDropdown').classList.toggle('hidden');}
+            </script>
         </main>              
     </body>
 </html>
