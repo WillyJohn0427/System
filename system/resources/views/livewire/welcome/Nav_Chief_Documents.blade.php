@@ -196,7 +196,7 @@
                         </ul>
                     </ul>
                 </nav>
-                <a href="{{ route('bin') }}" class="absolute inset-x-6 bottom-[110px] ml-1 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                <a href="{{ route('bin') }}" class="absolute inset-x-6 bottom-[117px] ml-1 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     fill="none" viewBox="0 0 24 24" stroke-width="2" 
                     stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
@@ -205,7 +205,7 @@
                 </svg>
                 <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Bin</span>
                 </a> 
-                <form method="POST" action="{{ route('logout') }}" class="absolute inset-x-2 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                <form method="POST" action="{{ route('logout') }}" class="absolute inset-x-2 bottom-[57px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
                 @csrf
                 <a href="{{ route('login1') }}" class="flex items-center space-x-4">
                     <svg xmlns="http://www.w3.org/2000/svg"
