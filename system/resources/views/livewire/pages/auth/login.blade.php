@@ -83,6 +83,7 @@ new #[Layout('layouts.guest')] class extends Component
                 <!-- Main Form for Log In Container. -->
                 <form method="POST" action="{{ route('login.authenticate') }}">
                     @csrf
+                    <div class="bg-white pt-[93px] ml-[100px] pb-[41.5px] pr-[100px] pl-[100px] mr-[70px] drop-shadow-md md:drop-shadow-lg rounded-b-2xl rounded-t-2xl w-[550px] text-center mb-[20px] -mt-[10px]">
                     <label class="block ml-[2px] text-red-900 text-md font-bold mb-1 text-left">PUP Webmail*</label>
                     <input type="email" name="email" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] border-red-900 rounded-md mb-2" required placeholder="example@pup.edu.ph">
 
