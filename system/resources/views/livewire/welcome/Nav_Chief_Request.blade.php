@@ -104,9 +104,9 @@
         </div>
         
             <!-- Settings Icon -->
-            <button class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition">
-            <i class="fas fa-cog text-2xl"></i>
-            </button>
+            <a href="{{ route('profile1') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fas fa-cog text-2xl"></i>
+                </a>
         
             <!-- User Info -->
             <div class="flex items-center gap-2">
