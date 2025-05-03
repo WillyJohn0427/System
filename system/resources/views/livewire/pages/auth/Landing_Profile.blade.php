@@ -19,15 +19,16 @@
 </head>
     <!-- Main Body of Login Page Using Gradient Background for the Round Corners -->
     <body class="flex h-screen bg-gradient-to-t from-gray-50 to-red-800 ">
+        <!-- First Layer Under Container Background Gradient -->
         <div class="flex w-full h-full bg-cover bg-center relative rounded-br-[90px]" 
-            style="background-image: url('Images/Background.png')";>
-
-            <!-- Left Side Panel Container -->
-            <div class="flex w-full h-full ">
-                <div class="flex-1 bg-red-900 text-white flex flex-col items-center justify-center text-center p-5 rounded-br-[90px] bg-cover bg-center relative" style="background-image: url('{{ asset('images/LandingPage_Images/Cover.png') }}');">
+        style="background-image: url('{{ asset('images/LandingPage_Images/Background.png') }}');">
     
+            <!-- Left Side Panel Container -->
+            <div class="flex w-full h-full">
+                <div class="flex-1 bg-red-900 text-white flex flex-col items-center justify-center text-center p-5 rounded-br-[90px] bg-cover bg-center relative" style="background-image: url('{{ asset('images/LandingPage_Images/Cover.png') }}');">
+
                     <!-- Red Transparent Overlay -->
-                    <div class="absolute inset-0 bg-red-900 opacity-60 rounded-br-[90px]" ></div>
+                    <div class="absolute inset-0 bg-red-900 opacity-60 rounded-br-[90px]"></div>
 
                     <!-- Content of Left Container (Ensures it appears above the overlay) -->
                     <div class="relative z-10 flex flex-col items-center justify-center">
@@ -41,7 +42,6 @@
                         </div>
                         <h2 class="text-[30px] tracking-wider font-medium mb-[5px] mt-[20px]" style="font-family: 'Playfair Display SC', serif;">Welcome to the PUP-QAC</h2>
                         <h1 class="text-[40px] tracking-wider font-bold mb-1" style="font-family: 'Playfair Display SC', serif;">DOCUMENT ARCHIVING AND CONTROL SYSTEM</h1>
-                    </div>
                     </div>
                 </div>
 
@@ -71,25 +71,30 @@
                                 <p class="text-gray-600 my-2 mb-[15px]">- or -</p>
                         
                                 <div class="flex gap-4">
-                                    <button class="border border-black px-4 py-2 flex items-center rounded-lg text-gray-700 text-sm">
+                                    <button class="border border-black px-4 py-3 flex items-center gap-2 rounded-lg text-gray-700 text-sm min-w-[220px] justify-center">
                                         <svg class="w-5 h-5" fill="gray" viewBox="0 0 24 24">
                                             <path d="M4 4h16v12H4V4zm2 10h12V6H6v8zM2 20h20v2H2v-2z" />
-                                        </svg>  Upload from computer
+                                        </svg>  
+                                        Upload from computer
                                     </button> 
-                        
-                                    <button class="border border-black px-4 py-2 flex items-center rounded-lg text-gray-700 text-sm">
-                                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="gray" xmlns="http://www.w3.org/2000/svg">
-                                          <path fill-rule="evenodd" clip-rule="evenodd" d="M14.8814 4.5H9.11862L7.46862 7.03125H3.75L3 7.78125V18.75L3.75 19.5H20.25L21 18.75V7.78125L20.25 7.03125H16.5314L14.8814 4.5ZM8.28138 8.53125L9.93138 6H14.0686L15.7186 8.53125H19.5V18H4.5V8.53125H8.28138ZM9.75 12.75C9.75 11.5074 10.7574 10.5 12 10.5C13.2426 10.5 14.25 11.5074 14.25 12.75C14.25 13.9926 13.2426 15 12 15C10.7574 15 9.75 13.9926 9.75 12.75ZM12 9C9.92893 9 8.25 10.6789 8.25 12.75C8.25 14.8211 9.92893 16.5 12 16.5C14.0711 16.5 15.75 14.8211 15.75 12.75C15.75 10.6789 14.0711 9 12 9Z" />
+                                
+                                    <button class="border border-black px-6 py-3 flex items-center gap-2 rounded-lg text-gray-700 text-sm min-w-[170px] justify-center">
+                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="gray" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.8814 4.5H9.11862L7.46862 7.03125H3.75L3 7.78125V18.75L3.75 19.5H20.25L21 18.75V7.78125L20.25 7.03125H16.5314L14.8814 4.5ZM8.28138 8.53125L9.93138 6H14.0686L15.7186 8.53125H19.5V18H4.5V8.53125H8.28138ZM9.75 12.75C9.75 11.5074 10.7574 10.5 12 10.5C13.2426 10.5 14.25 11.5074 14.25 12.75C14.25 13.9926 13.2426 15 12 15C10.7574 15 9.75 13.9926 9.75 12.75ZM12 9C9.92893 9 8.25 10.6789 8.25 12.75C8.25 14.8211 9.92893 16.5 12 16.5C14.0711 16.5 15.75 14.8211 15.75 12.75C15.75 10.6789 14.0711 9 12 9Z" />
                                         </svg>
                                         Take a picture
-                                      </button>                                      
+                                    </button>                                      
                                 </div>
                             </div>
                         </div>
 
                         <!-- Mini Container for Next Button -->
                         <div class="text-center -mt-[29px] mb-[9px]">
-                            <a href="{{ route('verify1') }}" class="bg-red-900 text-white py-3 rounded-xl w-[155px] hover:bg-red-950 hover:text-white transition font-semibold">Next</a>
+                            <button class="bg-red-900 text-white py-3 mr-2 rounded-xl w-[155px] hover:bg-red-950 hover:text-white transition font-semibold">Skip</button>
+                            <a href="{{ route('verify1') }}"
+                            class="bg-red-900 text-white px-[60px] py-3 ml-2 rounded-xl font-semibold hover:bg-red-950 transition duration-200 inline-block text-center">
+                            Next
+                            </a>
                         </div>
                     </div>
 
