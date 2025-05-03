@@ -18,7 +18,7 @@ Route::view('/chief-event2', 'livewire.welcome.Nav_Chief_Event2')->name('chief.e
 Route::view('/event', 'livewire.welcome.Nav_Chief_Event')->name('event');
 Route::view('/users', 'livewire.welcome.Nav_Chief_Users')->middleware('auth')->name('users');
 Route::view('/users2', 'livewire.welcome.Nav_Chief_Users2')->name('users2');
-Route::view('/users3', 'livewire.welcome.Nav_Chief_Users3s')->name('users3');
+Route::view('/users3', 'livewire.welcome.Nav_Chief_Users3')->name('users3');
 Route::view('/report', 'livewire.welcome.Nav_Chief_Report')->name('report');
 Route::view('/history', 'livewire.welcome.Nav_Chief_History')->name('history');
 Route::view('/profile1', 'livewire.welcome.Nav_Chief_Profile1')->name('profile1');
