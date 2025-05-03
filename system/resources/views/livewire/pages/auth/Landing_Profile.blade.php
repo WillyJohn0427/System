@@ -90,7 +90,10 @@
 
                         <!-- Mini Container for Next Button -->
                         <div class="text-center -mt-[29px] mb-[9px]">
-                            <button class="bg-red-900 text-white py-3 mr-2 rounded-xl w-[155px] hover:bg-red-950 hover:text-white transition font-semibold">Skip</button>
+                            <a href="{{ route('verify1') }}"
+                            class="bg-red-900 text-white px-[62px] py-3 mr-2 rounded-xl font-semibold hover:bg-red-950 transition duration-200 inline-block text-center">
+                            Skip
+                            </a>
                             <a href="{{ route('verify1') }}"
                             class="bg-red-900 text-white px-[60px] py-3 ml-2 rounded-xl font-semibold hover:bg-red-950 transition duration-200 inline-block text-center">
                             Next
