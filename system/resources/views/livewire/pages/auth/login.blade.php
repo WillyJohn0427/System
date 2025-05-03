@@ -99,12 +99,12 @@ new #[Layout('layouts.guest')] class extends Component
                     @error('password')
                         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
-                    <div class="flex justify-between items-center space-x-4 ml-[25px] mb-[15px]">
+                    <div class="flex justify-between items-center space-x-4 ml-[25px] mb-[15px] absolute right-[105px]">
                         <a href="{{ route('forgot1') }}" class="text-[14px] text-red-900 hover:underline">Forgot Password?</a>
                     </div>
                     
-                    <div class="flex justify-center items-center space-x-4 mb-[93px] mt-[83px]">
-                        <button type="submit" class="bg-red-900 text-white py-3 px-5 rounded-xl mt-5 w-[155px] hover:bg-red-950 hover:text-white transition font-semibold">Log in</button>
+                    <div class="flex justify-center items-center space-x-4 mb-[93px] mt-[103px]">
+                        <button type="submit" class="bg-red-900 text-white py-3 px-5 rounded-xl mt-5 w-[155px] -mb-[75px] hover:bg-red-950 hover:text-white transition font-semibold ">Log in</button>
                     </div>
                 </form>
                         <a class="font-semibold text-lg text-gray-700">Doesn't have an Account?</a>
