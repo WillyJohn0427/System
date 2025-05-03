@@ -18,15 +18,16 @@
 </head>
     <!-- Main Body of Login Page Using Gradient Background for the Round Corners -->
     <body class="flex h-screen bg-gradient-to-t from-gray-50 to-red-800 ">
+        <!-- First Layer Under Container Background Gradient -->
         <div class="flex w-full h-full bg-cover bg-center relative rounded-br-[90px]" 
-        style="background-image: url('{{ asset('images/LandingPage_Images/QAC.png') }}')";>
-
-            <!-- Left Side Panel Container -->
-            <div class="flex w-full h-full ">
-                <div class="flex-1 bg-red-900 text-white flex flex-col items-center justify-center text-center p-5 rounded-br-[90px] bg-cover bg-center relative" style="background-image: url('{{ asset('images/LandingPage_Images/Cover.png') }}');">
+        style="background-image: url('{{ asset('images/LandingPage_Images/Background.png') }}');">
     
+            <!-- Left Side Panel Container -->
+            <div class="flex w-full h-full">
+                <div class="flex-1 bg-red-900 text-white flex flex-col items-center justify-center text-center p-5 rounded-br-[90px] bg-cover bg-center relative" style="background-image: url('{{ asset('images/LandingPage_Images/Cover.png') }}');">
+
                     <!-- Red Transparent Overlay -->
-                    <div class="absolute inset-0 bg-red-900 opacity-60 rounded-br-[90px]" ></div>
+                    <div class="absolute inset-0 bg-red-900 opacity-60 rounded-br-[90px]"></div>
 
                     <!-- Content of Left Container (Ensures it appears above the overlay) -->
                     <div class="relative z-10 flex flex-col items-center justify-center">
@@ -48,24 +49,27 @@
                 
                     <!-- Upper Container for Forgot Your Password Title  -->
                     <div class="bg-gray-200 p-6 mr-[70px] -mt-[23px] flex justify-center items-center rounded-t-2xl w-[550px] min-h-[105px] md:drop-shadow-lg ">
-                        <div class="flex-1 text-center text-[28px] tracking-[1px] font-bold text-red-900">Wait for Verification Code/Email</div>
+                        <div class="flex-1 text-center text-[28px] tracking-[1px] font-bold text-red-900">Verify your Email</div>
                     </div>
         
                 
                         <!-- Main Form Container -->
-                        <div class="bg-white pt-[160px] pb-[110px] pr-[100px] pl-[100px] mr-[70px] drop-shadow-md md:drop-shadow-lg rounded-b-2xl rounded-t-2xl w-[550px] text-center -mt-[10px]">
-                
-                            <label class="block ml-[2px] mt-[10px] font-bold text-red-900 text-md text-left mt-[25px]">
+                        <div class="bg-white pt-[150px] pb-[93px] pr-[100px] pl-[100px] mr-[70px] drop-shadow-md md:drop-shadow-lg rounded-b-2xl rounded-t-2xl w-[550px] text-center -mt-[10px]">
+                        <p class="text-[16px] text-gray-800 -mb-[20px] -mt-[30px]">A verification code has been sent to your email. Please check your inbox.</p>
+
+
+                            <div class="mt-6 pt-[15px] pb-[75px] p-6 rounded-lg -ml-[20px]">
+                            <label class="block mt-[10px] font-bold text-red-900 text-md text-left mt-[25px]">
                                 Verification Code*
                             </label>
                             <input
                                 type="text"
                                 wire:model.defer="code"
                                 placeholder="Enter the code here."
-                                class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[7px] mb-[25px] border-red-900 rounded-md"
-                            >
-                
-                            <div class="flex space-x-4 mt-[135px] justify-center items-center">
+                                class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[7px] mb-[25px] border-red-900 rounded-md">
+                            </div>
+
+                            <div class="flex mt-[50px] justify-center items-center">
                             <a href="{{ route('login1') }}" class="py-3 px-5 w-[155px] bg-red-900 text-white rounded-xl hover:bg-red-950 hover:text-white transition font-semibold">
                             Continue
                             </a>
