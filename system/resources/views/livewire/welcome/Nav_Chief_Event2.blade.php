@@ -241,84 +241,55 @@
                 </div>                  
         </aside>
 
-<!-- Container that prevents overlap with sidebar/header -->
-<div class="pl-[223px] pt-[180px] min-h-screen bg-gray-100 flex justify-center items-start">
-  <!-- Content Box -->
-  <div class="bg-white rounded-2xl shadow-md w-full max-w-6xl flex flex-col md:flex-row overflow-hidden p-6 md:p-10 justify-center">
-
-    <!-- Right Panel -->
-    <div class="w-full md:w-2/3 mt-8 md:mt-0 md:pl-10 md:pr-10 mx-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center">Enter Event Details</h2>
-
-      <form class="space-y-[13px]">
-        <!-- Event Title -->
-        <div>
-          <label class="block text-[17px] font-medium text-gray-800">Event Title</label>
-          <input type="text"
-            class="mt-1 block w-full border-2 border-gray-200 bg-gray-50 hover:border-red-900 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-800" />
-        </div>
-
-        <!-- Campus -->
-        <div>
-          <select
-            class="mt-1 block w-full border-2 border-gray-200 bg-gray-50 rounded-md px-3 py-2 hover:border-red-900 bg-gray-100 text-gray-400 ">
-            <option>Campuses / Mabini Campus</option>
-          </select>
-        </div>
-
-        <!-- Program -->
-        <div class="relative">
-          <select
-            class="mt-1 block w-full border-2 border-gray-200 bg-gray-50 rounded-md px-3 py-2 pr-10 hover:border-red-900 bg-gray-100 text-gray-400">
-            <option>Program</option>
-          </select>
-        </div>
-
-        <!-- Location -->
-        <div>
-          <label class="block text-[17px] font-medium text-gray-800">Location</label>
-          <input type="text"
-            class="mt-1 block w-full border-2 border-gray-200 bg-gray-50 rounded-md px-3 py-2 hover:border-red-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-800" />
-        </div>
-
-        <!-- Date & Time -->
-        <div>
-          <label class="block text-[17px] font-medium text-gray-800">Date & Time</label>
-          <input type="date"
-            class="mt-1 block w-full border-2 border-gray-200 bg-gray-50 rounded-md px-3 py-2 hover:border-red-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-800" />
-        </div>
-
-        <!-- Participants -->
-        <div>
-          <label class="block text-[17px] font-medium text-gray-800 ml-[1px]">Add Participants</label>
-          <div class="flex flex-wrap gap-4 mt-1 cursor-pointer">
-            <span class="bg-red-800 text-white px-3 py-2 rounded-full text-sm font-semibold">PB</span>
-            <span class="bg-red-800 text-white px-3 py-2 rounded-full text-sm font-semibold">PC</span>
-            <span class="bg-red-800 text-white px-3 py-2 rounded-full text-sm font-semibold">RL</span>
-            <span class="bg-red-800 text-white px-3 py-2 rounded-full text-sm font-semibold">CT</span>
-            <span class="bg-red-800 text-white px-3 py-2 rounded-full text-sm font-semibold">LL</span>
-            <span class="bg-red-800 text-white px-3 py-2 rounded-full text-sm font-bold">+</span>
+        <!-- Container that prevents overlap with sidebar/header -->
+        <div class="pl-[223px] pt-[250px] min-h-screen flex justify-center items-start">
+          <!-- Content Box -->
+          <div class="bg-white rounded-2xl shadow-md w-full max-w-2xl flex flex-col md:flex-row overflow-hidden p-6 md:p-10 justify-center">
+        
+            <!-- Right Panel -->
+            <div class="w-full md:w-2/3 mt-8 md:mt-0 md:pl-5 md:pr-5 mx-auto">
+              <h2 class="text-3xl font-bold mb-6 text-center">Enter Event Details</h2>
+        
+              <form class="space-y-[15px] -ml-5">
+                <!-- Event Title -->
+                <div>
+                  <label class="block text-[17px] font-medium text-gray-800">Event Title <span class="text-red-800">*</span></label>
+                  <input type="text"
+                    class="mt-1 block w-[400px] border-2 border-gray-200 bg-gray-50 hover:border-red-900 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-800" />
+                </div>
+        
+                <!-- Location -->
+                <div>
+                  <label class="block text-[17px] font-medium text-gray-800">Location</label>
+                  <input type="text"
+                    class="mt-1 block w-[400px] border-2 border-gray-200 bg-gray-50 rounded-md px-3 py-2 hover:border-red-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-800" />
+                </div>
+        
+                <!-- Date & Time -->
+                <div>
+                    <label class="block text-[17px] font-medium text-gray-800">Date & Time <span class="text-red-800">*</span></label>
+                  <input type="date"
+                    class="mt-1 block w-[400px] border-2 border-gray-200 bg-gray-50 rounded-md px-3 py-2 hover:border-red-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-800" />
+                </div>
+        
+                <!-- Description -->
+                <div>
+                  <label class="block text-[17px] font-medium text-gray-800">Description</label>
+                  <textarea rows="1"
+                    class="mt-1 block w-[400px] border-2 border-gray-200 bg-gray-50 rounded-md px-3 py-2 hover:border-red-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-800"></textarea>
+                </div>
+        
+                <!-- Buttons at bottom -->
+                <div class="flex justify-center gap-3 pt-[35px] pl-[185px]">
+                  <button type="button"
+                    class="bg-red-900 text-white px-8 py-2 rounded-full hover:bg-red-800 transition">Cancel</button>
+                  <button type="submit"
+                    class="bg-red-900 text-white px-6 py-2 rounded-full hover:bg-red-800 transition">Continue</button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-
-        <!-- Description -->
-        <div>
-          <label class="block text-[17px] font-medium text-gray-800">Description</label>
-          <textarea rows="1"
-            class="mt-1 block w-full border-2 border-gray-200 bg-gray-50 rounded-md px-3 py-2 hover:border-red-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-800"></textarea>
-        </div>
-
-        <!-- Buttons at bottom -->
-        <div class="flex justify-end gap-3 pt-4">
-          <a href="{{ route('event') }}" type="button"
-            class="bg-red-900 text-white px-6 py-2 rounded-full hover:bg-red-800 transition">Cancel</a>
-          <button type="submit"
-            class="bg-red-900 text-white px-6 py-2 rounded-full hover:bg-red-800 transition">Continue</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+        </div> 
     <script>
             function openLogoutModal() {
            document.getElementById('logoutModal').classList.remove('hidden');
