@@ -243,66 +243,108 @@
 
             <main class="ml-[253px] flex-1 p-8 overflow-y-auto mt-[108px]">  
                 <div class="bg-white shadow-md rounded-t-2xl rounded-b-2xl p-6 max-w-[1514px] mx-auto mt-10 px-8 ">
-                  <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-[35px] font-[700] text-gray-900">Reports</h2>
-                    <button class="bg-yellow-500 hover:bg-yellow-600 text-black text-sm text-2xl font-bold px-4 py-2 rounded shadow hover:text-white">
-                      + New Report
-                    </button>
-                  </div>
-                  
-                  <div class="border border-gray-300 rounded-xl shadow-sm overflow-hidden bg-white p-4">
-                    <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-3">
-                      <thead class="border-b border-black">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-[35px] font-[700] text-gray-900">Reports</h2>
+                        <button class="bg-yellow-500 hover:bg-yellow-600 text-black text-sm text-2xl font-bold px-4 py-2 rounded shadow hover:text-white">
+                          + New Report
+                        </button>
+                      </div>
+              
+                  <div class="overflow-x-auto mt-[25px] border border-gray-300 rounded-lg">
+                    <table class="min-w-full text-left">
+                      <thead class="bg-gray-100 text-gray-700 uppercase text-sm text-center">
                         <tr>
-                          <th class="px-6 py-4 text-[22px] font-semibold">Title</th>
-                          <th class="px-6 py-4 text-[20px] font-medium">Modified by</th>
-                          <th class="px-6 py-4 text-[20px] font-medium">Date</th>
-                          <th class="px-6 py-4 text-[20px] font-medium text-right">Actions</th>
+                          <th class="px-6 py-5 text-[17px] font-semibold">Title</th>
+                          <th class="px-6 py-5 text-[17px] font-semibold"></th>
+                          <th class="px-6 py-5 text-[17px] font-semibold">Modified</th>
+                          <th class="px-6 py-5 text-[17px] font-semibold">Date</th>
+                          <th class="px-6 py-5 text-[17px] font-semibold">Action</th>
                         </tr>
                       </thead>
                       <tbody class="text-[19px] text-black max-w-[50%] truncate">
-                        <tr class="bg-white shadow-sm">
-                          <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">COPC Status for Main Campus</td>
-                          <td class="px-6 py-5 border-t border-b border-gray-300">Ryza Mae Idian</td>
-                          <td class="px-6 py-5 border-t border-b border-gray-300">09/07/23</td>
-                          <td title="See More" class="px-6 py-5 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">...</td>
+                        <!-- Row Template -->
+                        <tr class="border-b text-center cursor-pointer">
+                          <td class="px-6 py-5">COPC Status for Main Campus</td>
+                          <td class="px-6 py-5"></td>
+                          <td class="px-6 py-5">Ryza Mae Idian</td>
+                          <td class="px-6 py-5">09/07/23</td>
+                          <td class="px-6 py-5 space-x-[2px]">
+                            <button onclick="handleView()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-blue-700 hover:text-white transition">View</button>
+                            <button onclick="handleDownload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-green-800 hover:text-white transition">Download</button>
+                            <button onclick="handleDelete()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Delete</button>
+                          </td>
                         </tr>
-                        <tr class="bg-white shadow-sm">
-                          <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">COPC Status for Main Campus</td>
-                          <td class="px-6 py-5 border-t border-b border-gray-300">Ryza Mae Idian</td>
-                          <td class="px-6 py-5 border-t border-b border-gray-300">09/07/23</td>
-                          <td title="See More" class="px-6 py-5 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">...</td>
-                        </tr>
-                        <tr class="bg-white shadow-sm">
-                          <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">COPC Status for Main Campus</td>
-                          <td class="px-6 py-5 border-t border-b border-gray-300">Ryza Mae Idian</td>
-                          <td class="px-6 py-5 border-t border-b border-gray-300">09/07/23</td>
-                          <td title="See More" class="px-6 py-5 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">...</td>
-                        </tr>
+
+                        <!-- Row Template -->
+                        <tr class="border-b text-center cursor-pointer">
+                            <td class="px-6 py-5">COPC Status for Main Campus</td>
+                            <td class="px-6 py-5"></td>
+                            <td class="px-6 py-5">Ryza Mae Idian</td>
+                            <td class="px-6 py-5">09/07/23</td>
+                            <td class="px-6 py-5 space-x-[2px]">
+                              <button onclick="handleView()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-blue-700 hover:text-white transition">View</button>
+                              <button onclick="handleDownload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-green-800 hover:text-white transition">Download</button>
+                              <button onclick="handleDelete()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Delete</button>
+                            </td>
+                          </tr>
+
+                          <!-- Row Template -->
+                        <tr class="border-b text-center cursor-pointer">
+                            <td class="px-6 py-5">COPC Status for Main Campus</td>
+                            <td class="px-6 py-5"></td>
+                            <td class="px-6 py-5">Ryza Mae Idian</td>
+                            <td class="px-6 py-5">09/07/23</td>
+                            <td class="px-6 py-5 space-x-[2px]">
+                              <button onclick="handleView()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-blue-700 hover:text-white transition">View</button>
+                              <button onclick="handleDownload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-green-800 hover:text-white transition">Download</button>
+                              <button onclick="handleDelete()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Delete</button>
+                            </td>
+                          </tr>
+                        <!-- You can repeat the rows as needed -->
                       </tbody>
                     </table>
-                </div>                                
-            </div>
-                <script>
-              function openLogoutModal() {
-              document.getElementById('logoutModal').classList.remove('hidden');}
-                                      
-              function closeLogoutModal() {
-              document.getElementById('logoutModal').classList.add('hidden');}
-                                      
-              // Function to handle logout confirmation (this is just a placeholder)
-              function confirmLogout() {
-              alert("You have been logged out!"); 
-              // Example: window.location.href = '/logout';  <-- real logout
-              closeLogoutModal();}
+                  </div>
+                </div>
+              </div>
+              
+              <script>
+                function handleView() {
+                  alert("View button clicked!");
+                }
+              
+                function handleDownload() {
+                  alert("Download button clicked!");
+                }
+              
+                function handleDelete() {
+                  alert("Delete button clicked!");
+                }
 
-              function toggleDropdown() {
-              document.getElementById('notificationDropdown').classList.toggle('hidden');
-              // When opening notification dropdown, also close 3-dot mini-dropdown
-              document.getElementById('threeDotDropdown').classList.add('hidden');}
-                                      
-              function toggleThreeDotDropdown() {
-              document.getElementById('threeDotDropdown').classList.toggle('hidden');}
+
+                function openLogoutModal() {
+                    document.getElementById('logoutModal').classList.remove('hidden');
+                  }
+                
+                  function closeLogoutModal() {
+                    document.getElementById('logoutModal').classList.add('hidden');
+                  }
+                
+                  // Function to handle logout confirmation (this is just a placeholder)
+                  function confirmLogout() {
+                  alert("You have been logged out!"); 
+                 // Example: window.location.href = '/logout';  <-- real logout
+                 closeLogoutModal();
+                 }
+
+                 function toggleDropdown() {
+                    document.getElementById('notificationDropdown').classList.toggle('hidden');
+                    // When opening notification dropdown, also close 3-dot mini-dropdown
+                    document.getElementById('threeDotDropdown').classList.add('hidden');
+                  }
+                
+                  function toggleThreeDotDropdown() {
+                    document.getElementById('threeDotDropdown').classList.toggle('hidden');
+                  }
 
                 // LOGOUT SCRIPT
               function openLogoutModal() {
