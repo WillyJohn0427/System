@@ -266,95 +266,172 @@
         
                 <!-- Profile Section -->
                 <div class="p-6 max-w-[800px] ml-[330px] -mt-[224px]">
-                    <h2 class="text-xl font-[700] text-gray-900">Activity History</h2>
-        
-                    <div class="overflow-hidden bg-white p-4">
-                        <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2  mt-[22px]">
-                          <tbody class="text-[18px] text-black max-w-[50%] truncate">
-                            <tr class="bg-white shadow-sm">
-                              <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">Hanna Particia Sauro Uploaded a File in<a class="font-bold"> AACCUP Certificate Folder</a></td>
-                              <td class="px-4 py-3 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
-                                <button title="View File" class="hover:text-red-600">
-                                    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                      <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                    </svg>
-                                  </button>
-                              </td>
-                            </tr>
-                            <tr class="bg-white shadow-sm">
-                                <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">Hanna Particia Sauro Uploaded a File in<a class="font-bold"> AACCUP Certificate Folder</a></td>
-                                <td class="px-4 py-4 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
-                                    <button title="View File" class="hover:text-red-600">
-                                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                          <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                        </svg>
-                                      </button>
-                                </td>
-                            </tr>
-                            <tr class="bg-white shadow-sm">
-                                <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">Hanna Particia Sauro Uploaded a File in<a class="font-bold"> AACCUP Certificate Folder</a></td>
-                                <td class="px-4 py-4 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
-                                    <button title="View File" class="hover:text-red-600">
-                                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                          <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                        </svg>
-                                      </button>
-                                </td>
-                            </tr>
-                            <tr class="bg-white shadow-sm">
-                                <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">Hanna Particia Sauro Uploaded a File in<a class="font-bold"> AACCUP Certificate Folder</a></td>
-                                <td class="px-4 py-4 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
-                                    <button title="View File" class="hover:text-red-600">
-                                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                          <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                        </svg>
-                                      </button>
-                                </td>
-                            </tr>
-                            <tr class="bg-white shadow-sm">
-                                <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">Hanna Particia Sauro Uploaded a File in<a class="font-bold"> AACCUP Certificate Folder</a></td>
-                                <td class="px-4 py-4 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
-                                    <button title="View File" class="hover:text-red-600">
-                                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                          <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                        </svg>
-                                      </button>
-                                </td>
-                            </tr>
-                            <tr class="bg-white shadow-sm">
-                                <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">Hanna Particia Sauro Uploaded a File in<a class="font-bold"> AACCUP Certificate Folder</a></td>
-                                <td class="px-4 py-4 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
-                                    <button title="View File" class="hover:text-red-600">
-                                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                          <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                        </svg>
-                                      </button>
-                                </td>
-                            </tr>
-                            <tr class="bg-white shadow-sm">
-                                <td class="px-6 py-5 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">Hanna Particia Sauro Uploaded a File in<a class="font-bold"> AACCUP Certificate Folder</a></td>
-                                <td class="px-4 py-4 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
-                                    <button title="View File" class="hover:text-red-600">
-                                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                          <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
-                                        </svg>
-                                      </button>
-                                </td>
-                            </tr>
-                          </tbody>
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-xl font-[700] text-gray-900">Activity History</h2>
+                        <button id="filterButton" class="bg-red-800 text-white py-2 px-4 rounded-md text-md font-semibold flex items-center border border-black hover:bg-red-900">
+                            <!-- SVG icon on the left side of the text -->
+                            <svg viewBox="-0.5 0 25 25" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none">
+                                <path d="M12 7.82001H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 7.82001H4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20 16.82H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 16.82H12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 11.82C10.2091 11.82 12 10.0291 12 7.82001C12 5.61087 10.2091 3.82001 8 3.82001C5.79086 3.82001 4 5.61087 4 7.82001C4 10.0291 5.79086 11.82 8 11.82Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 20.82C18.2091 20.82 20 19.0291 20 16.82C20 14.6109 18.2091 12.82 16 12.82C13.7909 12.82 12 14.6109 12 16.82C12 19.0291 13.7909 20.82 16 20.82Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Filter
+                        </button>
+                    </div>
+                
+                    <!-- Filter Calendar Dropdown -->
+                    <div id="filterDropdown" class="hidden absolute mt-2 bg-gray-200 p-4 ml-20 shadow-lg rounded-md flex gap-4 border border-gray-300">
+                        <div class="flex flex-col">
+                            <label for="fromDate" class="text-black">From:</label>
+                            <input id="fromDate" type="date" class="w-full p-2 border border-gray-300 rounded-md" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="toDate" class="text-black">To:</label>
+                            <input id="toDate" type="date" class="w-full p-2 border border-gray-300 rounded-md" />
+                        </div>
+                        <div class="flex items-end gap-2">
+                            <button id="confirmButton" class="bg-yellow-400 text-black py-2 px-4 rounded-lg">Confirm</button>
+                            <button id="cancelButton" class="bg-gray-300 text-black py-2 px-4 rounded-lg">Cancel</button>
+                        </div>
+                    </div>
+                
+                    <div class="overflow-hidden bg-white pl-4 pr-4 pt-4">
+                        <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2 mt-[22px]">
+                            <tbody class="text-[18px] text-black max-w-[50%] truncate">
+                                <tr class="bg-white shadow-sm">
+                                    <td class="px-6 py-4 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                Hanna Particia Sauro Uploaded a File in
+                                                <a class="font-bold text-red-700" href="#">AACCUP Certificate Folder</a>
+                                            </div>
+                                            <span class="text-sm text-gray-500 mt-1">Feb 20, 2025 - 10:20 AM</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
+                                        <button title="View File" class="hover:text-red-600">
+                                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                                <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
-                    </div> 
+                    </div>
+
+                    <div class="overflow-hidden bg-white pl-4 pr-4">
+                        <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2">
+                            <tbody class="text-[18px] text-black max-w-[50%] truncate">
+                                <tr class="bg-white shadow-sm">
+                                    <td class="px-6 py-4 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                Hanna Particia Sauro Uploaded a File in
+                                                <a class="font-bold text-red-700" href="#">AACCUP Certificate Folder</a>
+                                            </div>
+                                            <span class="text-sm text-gray-500 mt-1">Feb 20, 2025 - 10:20 AM</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
+                                        <button title="View File" class="hover:text-red-600">
+                                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                                <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="overflow-hidden bg-white pl-4 pr-4">
+                        <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2">
+                            <tbody class="text-[18px] text-black max-w-[50%] truncate">
+                                <tr class="bg-white shadow-sm">
+                                    <td class="px-6 py-4 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                Hanna Particia Sauro Uploaded a File in
+                                                <a class="font-bold text-red-700" href="#">AACCUP Certificate Folder</a>
+                                            </div>
+                                            <span class="text-sm text-gray-500 mt-1">Feb 20, 2025 - 10:20 AM</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
+                                        <button title="View File" class="hover:text-red-600">
+                                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                                <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="overflow-hidden bg-white pl-4 pr-4">
+                        <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2">
+                            <tbody class="text-[18px] text-black max-w-[50%] truncate">
+                                <tr class="bg-white shadow-sm">
+                                    <td class="px-6 py-4 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                Hanna Particia Sauro Uploaded a File in
+                                                <a class="font-bold text-red-700" href="#">AACCUP Certificate Folder</a>
+                                            </div>
+                                            <span class="text-sm text-gray-500 mt-1">Feb 20, 2025 - 10:20 AM</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
+                                        <button title="View File" class="hover:text-red-600">
+                                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                                <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="overflow-hidden bg-white pl-4 pr-4 pb-12">
+                        <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2">
+                            <tbody class="text-[18px] text-black max-w-[50%] truncate">
+                                <tr class="bg-white shadow-sm">
+                                    <td class="px-6 py-4 rounded-l-lg border-t border-b border-l border-gray-300 cursor-pointer">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                Hanna Particia Sauro Uploaded a File in
+                                                <a class="font-bold text-red-700" href="#">AACCUP Certificate Folder</a>
+                                            </div>
+                                            <span class="text-sm text-gray-500 mt-1">Feb 20, 2025 - 10:20 AM</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 text-right rounded-r-lg border-t border-b border-r border-gray-300 cursor-pointer">
+                                        <button title="View File" class="hover:text-red-600">
+                                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                                <circle cx="12" cy="12" r="3" stroke="#7f1d1d" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
                 </div>
             </div>
         </div>
-         <script>
+        <script>
             function openLogoutModal() {
                 document.getElementById('logoutModal').classList.remove('hidden');
               }
@@ -369,6 +446,34 @@
              // Example: window.location.href = '/logout';  <-- real logout
              closeLogoutModal();
              }
+
+             const filterButton = document.getElementById('filterButton');
+             const filterDropdown = document.getElementById('filterDropdown');
+             const cancelButton = document.getElementById('cancelButton');
+             const confirmButton = document.getElementById('confirmButton');
+         
+             filterButton.addEventListener('click', () => {
+                 // Toggle the dropdown visibility
+                 const buttonRect = filterButton.getBoundingClientRect();
+                 filterDropdown.classList.toggle('hidden');
+                 
+                 // Position the dropdown below the filter button and align it to the left
+                 const dropdownWidth = filterDropdown.offsetWidth; // Get the dropdown width
+                 filterDropdown.style.top = `${buttonRect.bottom + window.scrollY + 5}px`;
+                 filterDropdown.style.left = `${buttonRect.left - dropdownWidth + 5}px`; // Align it to the left side
+             });
+         
+             cancelButton.addEventListener('click', () => {
+                 filterDropdown.classList.add('hidden');
+             });
+         
+             confirmButton.addEventListener('click', () => {
+                 const fromDate = document.getElementById('fromDate').value;
+                 const toDate = document.getElementById('toDate').value;
+                 console.log(`From: ${fromDate}, To: ${toDate}`);
+                 filterDropdown.classList.add('hidden');
+                 // Add your logic to filter based on selected dates
+             });
 
              function toggleDropdown() {
                 document.getElementById('notificationDropdown').classList.toggle('hidden');
