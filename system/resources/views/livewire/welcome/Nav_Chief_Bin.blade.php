@@ -264,88 +264,208 @@
             <!-- Document List -->
             <div class="space-y-4 mt-[55px] mb-[10px]">
               <!-- Single Row -->
-              <div class="flex items-center justify-between border-b pb-[13px] pt-[5px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
+                <div class="flex items-center justify-between border-b pb-[13px] pt-[10px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
+                  <!-- Title -->
+                  <p class="text-[20px] text-black max-w-[50%] truncate">
+                    Certificate of Program Compliance (COPC Evaluation) BSBA-FM
+                  </p>
+
+                  <!-- Date, Size, and Options -->
+                  <div class="flex items-center space-x-2 text-[16px] text-gray-700"> <!-- Changed from space-x-6 to space-x-4 -->
+                    <div class="flex space-x-12 mr-16"> <!-- Tighter spacing and smaller right margin -->
+                      <span>Feb 22</span>
+                      <span>10KB</span>
+                    </div>
+
+                    <!-- Restore Button -->
+                    <button onclick="confirmRestore()" title="Restore" class="text-gray-700 hover:text-green-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-7 w-7">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-2 16c-2.05 0-3.81-1.24-4.58-3h1.71c.63.9 1.68 1.5 2.87 1.5 1.93 0 3.5-1.57 3.5-3.5S13.93 9.5 12 9.5c-1.35 0-2.52.78-3.1 1.9l1.6 1.6h-4V9l1.3 1.3C8.69 8.92 10.23 8 12 8c2.76 0 5 2.24 5 5s-2.24 5-5 5z"></path>
+                        </g>
+                      </svg>
+                    </button>
+
+                    <!-- Delete Button -->
+                    <button onclick="confirmDelete()" title="Delete" class="text-gray-700 hover:text-red-600">
+                      <svg class="h-7 w-7 stroke-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+
+              <!-- Single Row -->
+              <div class="flex items-center justify-between border-b pb-[13px] pt-[14px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
                 <!-- Title -->
                 <p class="text-[20px] text-black max-w-[50%] truncate">
                   Certificate of Program Compliance (COPC Evaluation) BSBA-FM
                 </p>
+
                 <!-- Date, Size, and Options -->
-                <div class="flex items-center space-x-6 text-[16px] text-gray-700">
-                  <span>Feb 22</span>
-                  <span>10KB</span>
-                  <button title="See More" class="text-gray-700 hover:text-black text-3xl font-bold">…</button>
+                <div class="flex items-center space-x-2 text-[16px] text-gray-700"> <!-- Changed from space-x-6 to space-x-4 -->
+                  <div class="flex space-x-12 mr-16"> <!-- Tighter spacing and smaller right margin -->
+                    <span>Feb 22</span>
+                    <span>10KB</span>
+                  </div>
+
+                  <!-- Restore Button -->
+                  <button onclick="confirmRestore()" title="Restore" class="text-gray-700 hover:text-green-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-7 w-7">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-2 16c-2.05 0-3.81-1.24-4.58-3h1.71c.63.9 1.68 1.5 2.87 1.5 1.93 0 3.5-1.57 3.5-3.5S13.93 9.5 12 9.5c-1.35 0-2.52.78-3.1 1.9l1.6 1.6h-4V9l1.3 1.3C8.69 8.92 10.23 8 12 8c2.76 0 5 2.24 5 5s-2.24 5-5 5z"></path>
+                      </g>
+                    </svg>
+                  </button>
+
+                  <!-- Delete Button -->
+                  <button onclick="confirmDelete()" title="Delete" class="text-gray-700 hover:text-red-600">
+                    <svg class="h-7 w-7 stroke-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
                 </div>
               </div>
 
               <!-- Single Row -->
-              <div class="flex items-center justify-between border-b pb-[13px] pt-[8px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
+              <div class="flex items-center justify-between border-b pb-[13px] pt-[14px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
                 <!-- Title -->
                 <p class="text-[20px] text-black max-w-[50%] truncate">
                   Certificate of Program Compliance (COPC Evaluation) BSBA-FM
                 </p>
-                <!-- Date, Size, and Options -->
-                <div class="flex items-center space-x-6 text-[16px] text-gray-700">
-                  <span>Feb 22</span>
-                  <span>10KB</span>
-                  <button title="See More" class="text-gray-700 hover:text-black text-3xl font-bold">…</button>
-                </div>
-              </div>
 
-              <!-- Single Row -->
-              <div class="flex items-center justify-between border-b pb-[13px] pt-[8px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
-                <!-- Title -->
-                <p class="text-[20px] text-black max-w-[50%] truncate">
-                  Certificate of Program Compliance (COPC Evaluation) BSBA-FM
-                </p>
                 <!-- Date, Size, and Options -->
-                <div class="flex items-center space-x-6 text-[16px] text-gray-700">
-                  <span>Feb 22</span>
-                  <span>10KB</span>
-                  <button title="See More" class="text-gray-700 hover:text-black text-3xl font-bold">…</button>
+                <div class="flex items-center space-x-2 text-[16px] text-gray-700"> <!-- Changed from space-x-6 to space-x-4 -->
+                  <div class="flex space-x-12 mr-16"> <!-- Tighter spacing and smaller right margin -->
+                    <span>Feb 22</span>
+                    <span>10KB</span>
+                  </div>
+
+                  <!-- Restore Button -->
+                  <button onclick="confirmRestore()" title="Restore" class="text-gray-700 hover:text-green-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-7 w-7">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-2 16c-2.05 0-3.81-1.24-4.58-3h1.71c.63.9 1.68 1.5 2.87 1.5 1.93 0 3.5-1.57 3.5-3.5S13.93 9.5 12 9.5c-1.35 0-2.52.78-3.1 1.9l1.6 1.6h-4V9l1.3 1.3C8.69 8.92 10.23 8 12 8c2.76 0 5 2.24 5 5s-2.24 5-5 5z"></path>
+                      </g>
+                    </svg>
+                  </button>
+
+                  <!-- Delete Button -->
+                  <button onclick="confirmDelete()" title="Delete" class="text-gray-700 hover:text-red-600">
+                    <svg class="h-7 w-7 stroke-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-      
+              
+
+              <!-- Modal Container -->
+              <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-[300px] max-w-md">
+                  <h2 id="confirmationTitle" class="text-xl font-semibold mb-4 text-center"></h2>
+                  <div class="flex justify-center space-x-4">
+                    <button id="proceedButton" onclick="proceedAction()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg">Yes</button>
+                    <button onclick="closeModal()" class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg">Cancel</button>
+                  </div>
+                </div>
+              </div>
               <!-- Repeat similar rows -->
             </div>
           </div>
-            <script>
+          <script>
             function openLogoutModal() {
-                document.getElementById('logoutModal').classList.remove('hidden');
-              }
-            
-              function closeLogoutModal() {
-                document.getElementById('logoutModal').classList.add('hidden');
-              }
-            
-              // Function to handle logout confirmation (this is just a placeholder)
-              function confirmLogout() {
-              alert("You have been logged out!"); 
-             // Example: window.location.href = '/logout';  <-- real logout
-             closeLogoutModal();
-             }
+              document.getElementById('logoutModal').classList.remove('hidden');
+            }
+          
+            function closeLogoutModal() {
+              document.getElementById('logoutModal').classList.add('hidden');
+            }
+          
+            // Function to handle logout confirmation (this is just a placeholder)
+            function confirmLogout() {
+            alert("You have been logged out!"); 
+           // Example: window.location.href = '/logout';  <-- real logout
+           closeLogoutModal();
+           }
 
-             function toggleDropdown() {
-                document.getElementById('notificationDropdown').classList.toggle('hidden');
-                // When opening notification dropdown, also close 3-dot mini-dropdown
-                document.getElementById('threeDotDropdown').classList.add('hidden');
-              }
-            
-              function toggleThreeDotDropdown() {
-                document.getElementById('threeDotDropdown').classList.toggle('hidden');
-              }
 
-                // LOGOUT SCRIPT
+           let actionType = '';
+
+            function confirmRestore() {
+              actionType = 'restore';
+              document.getElementById('confirmationTitle').innerText = "Restore this file?";
+              const proceedBtn = document.getElementById('proceedButton');
+              proceedBtn.classList.remove('bg-red-600', 'hover:bg-red-700');
+              proceedBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+              document.getElementById('confirmationModal').classList.remove('hidden');
+            }
+
+            function confirmDelete() {
+              actionType = 'delete';
+              document.getElementById('confirmationTitle').innerText = "Delete this file?";
+              const proceedBtn = document.getElementById('proceedButton');
+              proceedBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+              proceedBtn.classList.add('bg-red-600', 'hover:bg-red-700');
+              document.getElementById('confirmationModal').classList.remove('hidden');
+            }
+
+            function proceedAction() {
+              if (actionType === 'restore') {
+                alert('File has been restored!');
+                // Add restore logic here
+              } else if (actionType === 'delete') {
+                alert('File has been deleted!');
+                // Add delete logic here
+              }
+              closeModal();
+            }
+
+            function closeModal() {
+              document.getElementById('confirmationModal').classList.add('hidden');
+            }
+
+            function toggleDropdown() {
+              document.getElementById('notificationDropdown').classList.toggle('hidden');
+              // When opening notification dropdown, also close 3-dot mini-dropdown
+              document.getElementById('threeDotDropdown').classList.add('hidden');
+            }
+          
+            function toggleThreeDotDropdown() {
+              document.getElementById('threeDotDropdown').classList.toggle('hidden');
+            }
+
+              // LOGOUT SCRIPT
               function openLogoutModal() {
               document.getElementById('logoutModal').classList.remove('hidden');}
-        
+
               function closeLogoutModal() {
               document.getElementById('logoutModal').classList.add('hidden');}
-        
+
               // Auto redirect after logout
               document.getElementById('logoutForm').addEventListener('submit', function () {
               setTimeout(function () {
               window.location.href = "{{ route('login1') }}";
-               }, 100); // Give Laravel enough time to process the logout
+              }, 100); // Give Laravel enough time to process the logout
               });
         </script>
         </main>
