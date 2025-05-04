@@ -281,8 +281,12 @@
         
                 <!-- Buttons at bottom -->
                 <div class="flex justify-center gap-3 pt-[35px] pl-[185px]">
-                  <button type="button"
-                    class="bg-red-900 text-white px-8 py-2 rounded-full hover:bg-red-800 transition">Cancel</button>
+                  <a href="{{ route('event') }}">
+                      <button type="button"
+                        class="bg-red-900 text-white px-8 py-2 rounded-full hover:bg-red-800 transition">
+                        Cancel
+                      </button>
+                    </a>
                   <button type="submit"
                     class="bg-red-900 text-white px-6 py-2 rounded-full hover:bg-red-800 transition">Continue</button>
                 </div>
