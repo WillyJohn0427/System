@@ -45,7 +45,7 @@ class AuthController extends Controller
     
         // Reserved email for admin dashboard
         $adminEmails = [
-            'system@pup.edu.ph', // Add all reserved admin emails here
+            'system@pup.edu.ph', // Add all reserved Executive emails here
         ];
     
         if (in_array($user->email, $adminEmails)) {
@@ -54,7 +54,7 @@ class AuthController extends Controller
         }
     
         // Redirect to the client dashboard for other valid emails
-        return redirect()->route('cdashboard');
+        return redirect()->route('Cdashboard');
     }
 
     public function store(Request $request)
@@ -81,6 +81,6 @@ class AuthController extends Controller
         // Log the user in
         Auth::login($user);
 
-        return redirect()->route('cdashboard');
+        return redirect()->route('profile2');
     }
 }
