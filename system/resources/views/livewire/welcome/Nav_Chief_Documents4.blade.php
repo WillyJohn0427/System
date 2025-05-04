@@ -378,7 +378,7 @@
           </div>
         </div>
       </div>
-      <span class="block mt-2 text-sm font-semibold max-w-[150px] line-clamp-2">BANSUDE, OREINTAL MINDORO</span>
+      <span class="block mt-2 text-sm font-semibold max-w-[150px] line-clamp-2">BANSUD, ORIENTAL MINDORO</span>
     </div>
     </a>
 
@@ -602,7 +602,7 @@
             </div>
           </div>
         </div>
-        <span class="block mt-2 text-sm font-semibold max-w-[150px] line-clamp-2">MARIVELS, BATAAN</span>
+        <span class="block mt-2 text-sm font-semibold max-w-[150px] line-clamp-2">MARIVELES, BATAAN</span>
       </div>
       </a>
 
