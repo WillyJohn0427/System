@@ -10,7 +10,7 @@
     <!-- Google Font: Playfair Display SC -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
     <!-- Import for Icon -->
-    <link rel="icon" type="image/png" href="Images/QAC.png">
+    <link rel="icon" type="image/png" href="{{ asset('images/LandingPage_Images/QAC.png') }}">
     <!-- Tab/Window Title -->
     <title>PUPQAC - Document Archiving and Control System</title>
     <!-- Tailwind CSS Connection -->

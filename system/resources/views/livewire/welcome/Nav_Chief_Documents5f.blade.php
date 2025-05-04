@@ -206,7 +206,7 @@
                 </a> 
                 <!-- Log Out Button Trigger -->
                 <button onclick="openLogoutModal()" 
-                    class="absolute inset-x-6 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200 cursor-pointer">
+                    class="absolute inset-x-6 bottom-[43px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 24 24" stroke-width="2" 
                         stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
