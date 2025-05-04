@@ -263,20 +263,20 @@
             
             <!-- Document List -->
             <div class="space-y-4 mt-[55px] mb-[10px]">
-              <!-- Single Row -->
+              <!-- 1st Row -->
               <div class="flex items-center justify-between border-b pb-4 pt-[10px] border-gray-500 hover:bg-gray-200 rounded-lg">
                 <p class="text-[20px] text-black pl-[8px]">Certificate of Program Compliance (COPC Evaluation) BSBA-FM</p>
-                <div class="flex space-x-4 text-gray-600">
+                <div class="flex space-x-6 text-gray-600">
                   <!-- View Icon -->
                   <button title="View File" class="hover:text-red-600">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#555" stroke-width="2" fill="none"/>
                       <circle cx="12" cy="12" r="3" stroke="#555" stroke-width="2" fill="none"/>
                     </svg>
                   </button>
                   <!-- Download Icon -->
                   <button title="Download File" class="pr-[8px] hover:text-red-600">
-                    <svg class="w-[30px] h-[30px] text-gray-700 mb-[1px]" 
+                    <svg class="w-[25px] h-[25px] text-gray-700 mb-[1px]" 
                       fill="none" viewBox="0 0 24 24" stroke="currentColor" 
                       xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 3V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -287,20 +287,20 @@
                 </div>
               </div>
               
-              <!-- Single Row -->
+              <!-- 2nd Row -->
               <div class="flex items-center justify-between border-b pb-4 pt-[10px] border-gray-500 hover:bg-gray-200 rounded-lg">
                 <p class="text-[20px] text-black pl-[8px]">Certificate of Program Compliance (COPC Evaluation) BSBA-FM</p>
-                <div class="flex space-x-4 text-gray-600">
+                <div class="flex space-x-6 text-gray-600">
                   <!-- View Icon -->
                   <button title="View File" class="hover:text-red-600">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#555" stroke-width="2" fill="none"/>
                       <circle cx="12" cy="12" r="3" stroke="#555" stroke-width="2" fill="none"/>
                     </svg>
                   </button>
                   <!-- Download Icon -->
                   <button title="Download File" class="pr-[8px] hover:text-red-600">
-                    <svg class="w-[30px] h-[30px] text-gray-700 mb-[1px]" 
+                    <svg class="w-[25px] h-[25px] text-gray-700 mb-[1px]" 
                       fill="none" viewBox="0 0 24 24" stroke="currentColor" 
                       xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 3V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -311,20 +311,20 @@
                 </div>
               </div>
 
-              <!-- Single Row -->
+              <!-- 3rd Row -->
               <div class="flex items-center justify-between border-b pb-4 pt-[10px] border-gray-500 hover:bg-gray-200 rounded-lg">
                 <p class="text-[20px] text-black pl-[8px]">Certificate of Program Compliance (COPC Evaluation) BSBA-FM</p>
-                <div class="flex space-x-4 text-gray-600">
+                <div class="flex space-x-6 text-gray-600">
                   <!-- View Icon -->
                   <button title="View File" class="hover:text-red-600">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#555" stroke-width="2" fill="none"/>
                       <circle cx="12" cy="12" r="3" stroke="#555" stroke-width="2" fill="none"/>
                     </svg>
                   </button>
                   <!-- Download Icon -->
                   <button title="Download File" class="pr-[8px] hover:text-red-600">
-                    <svg class="w-[30px] h-[30px] text-gray-700 mb-[1px]" 
+                    <svg class="w-[25px] h-[25px] text-gray-700 mb-[1px]" 
                       fill="none" viewBox="0 0 24 24" stroke="currentColor" 
                       xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 3V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
