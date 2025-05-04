@@ -205,21 +205,43 @@
                 </svg>
                 <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Bin</span>
                 </a>  
-                <form method="POST" action="{{ route('logout') }}" class="absolute inset-x-2 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
-                @csrf
-                <a href="{{ route('login1') }}" class="flex items-center space-x-4">
+               <!-- Log Out Button Trigger -->
+                <button onclick="openLogoutModal()" 
+                    class="absolute inset-x-6 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 24 24" stroke-width="2" 
                         stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
                     <path stroke-linecap="round" stroke-linejoin="round" 
-                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
                     </svg>
-                    <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Log Out</span>
-                </a>
-              </form>                    
+                    <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">
+                    Log Out
+                    </span>
+                </button>
+
+                <!-- Logout Confirmation Modal -->
+                <div id="logoutModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+                <div class="bg-white rounded-lg shadow-lg p-8 w-[400px] text-center">
+                <h2 class="text-2xl font-bold mb-4 text-red-800">Confirm Logout</h2>
+                <p class="text-gray-700 mb-6">Are you sure you want to log out?</p>
+                <div class="flex justify-center gap-4">
+                <button onclick="closeLogoutModal()" 
+                        class="px-6 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition">
+                    Cancel
+                </button>
+                <!-- Logout form with redirect -->
+                <form id="logoutForm" method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="px-6 py-2 bg-red-800 text-white rounded-lg hover:bg-red-900 transition">
+                    Log Out
+                    </button>
+                </form>
+                </div>
+                </div>
+                </div>                 
             </aside>
 
-            <main class="ml-[253px] flex-1 p-8 overflow-y-auto mt-[108px]">  
+             <main class="ml-[253px] flex-1 p-8 overflow-y-auto mt-[108px]">  
                 <div class="bg-white shadow-md rounded-t-2xl rounded-b-2xl p-6 max-w-[1514px] mx-auto mt-10 px-8 ">
                   <h2 class="text-[35px] font-[700] text-gray-900">Request</h2>
               
@@ -244,7 +266,6 @@
                           <td class="px-6 py-5 space-x-[2px]">
                             <button onclick="handleReceive()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Receive</button>
                             <button onclick="handleUpload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Upload</button>
-                            <button onclick="handleSend()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Send</button>
                           </td>
                         </tr>
 
@@ -257,7 +278,6 @@
                             <td class="px-6 py-5 space-x-[2px]">
                               <button onclick="handleReceive()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Receive</button>
                               <button onclick="handleUpload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Upload</button>
-                              <button onclick="handleSend()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Send</button>
                             </td>
                           </tr>
 
@@ -270,7 +290,6 @@
                             <td class="px-6 py-5 space-x-[2px]">
                               <button onclick="handleReceive()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Receive</button>
                               <button onclick="handleUpload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Upload</button>
-                              <button onclick="handleSend()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Send</button>
                             </td>
                           </tr>
                         <!-- You can repeat the rows as needed -->
@@ -288,26 +307,23 @@
                 function handleUpload() {
                   alert("Upload button clicked!");
                 }
-              
-                function handleSend() {
-                  alert("Send button clicked!");
-                }
 
-                  
                 function openLogoutModal() {
-                document.getElementById('logoutModal').classList.remove('hidden');
-              }
-            
-              function closeLogoutModal() {
-                document.getElementById('logoutModal').classList.add('hidden');
-              }
-            
-              // Function to handle logout confirmation (this is just a placeholder)
-              function confirmLogout() {
-              alert("You have been logged out!"); 
-             // Example: window.location.href = '/logout';  <-- real logout
-             closeLogoutModal();
-             }
+                    document.getElementById('logoutModal').classList.remove('hidden');
+                  }
+                
+                  function closeLogoutModal() {
+                    document.getElementById('logoutModal').classList.add('hidden');
+                  }
+                
+
+                  // Function to handle logout confirmation (this is just a placeholder)
+                  function confirmLogout() {
+                    // Here you can put your real logout logic
+                    alert("You have been logged out!"); 
+                    // Example: window.location.href = '/logout';  <-- real logout
+                    closeLogoutModal();
+                  }
 
              function toggleDropdown() {
                 document.getElementById('notificationDropdown').classList.toggle('hidden');
@@ -318,6 +334,20 @@
               function toggleThreeDotDropdown() {
                 document.getElementById('threeDotDropdown').classList.toggle('hidden');
               }
+
+                  // LOGOUT SCRIPT
+              function openLogoutModal() {
+              document.getElementById('logoutModal').classList.remove('hidden');}
+        
+              function closeLogoutModal() {
+              document.getElementById('logoutModal').classList.add('hidden');}
+        
+              // Auto redirect after logout
+              document.getElementById('logoutForm').addEventListener('submit', function () {
+              setTimeout(function () {
+              window.location.href = "{{ route('login1') }}";
+               }, 100); // Give Laravel enough time to process the logout
+              });
               </script>                           
-    </body>
+        </body>
 </html>

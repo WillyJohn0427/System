@@ -21,42 +21,103 @@
 </head>
 
 <body class="bg-gray-100">
-    <!-- Header -->
-    <header class="bg-red-900 text-white p-4 pl-12 fixed w-full top-0 fixed top-0 left-0 right-0 h-[130px] shadow z-20 flex items-center px-4 flex justify-between items-center">
-      <!-- Logo and title -->
-      <div class="flex items-center gap-4">
-          <!-- Logo Image -->
-          <img src="{{ asset('images/Chief_images/QAC.jpeg') }}" alt="QAC Logo" class="h-[80px] w[80px] object-contain" />
-  
-          <!-- Title -->
-          <div class="pl-5 mt-2">
-              <div class="text-md text-[25px] -mb-3" style="font-family: 'Playfair Display SC', serif;">Quality Assurance Center</div>
-              <div class="text-[40px] font-bold mb-1">Document Archiving and Control System</div>
-          </div>
-      </div>
-  
-      <!-- Notification and profile -->
-      <div class="flex items-center gap-4">
-          <!-- Notification Icon -->
-          <button class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
-          <i class="fas fa-bell text-2xl"></i>
-          </button>
-      
-          <!-- Settings Icon -->
-          <a href="{{ route('profile1') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
-                <i class="fas fa-cog text-2xl"></i>
-          </a>
-      
-          <!-- User Info -->
+         <!-- Header -->
+         <header class="bg-red-900 text-white p-4 pl-12 fixed w-full top-0 fixed top-0 left-0 right-0 h-[130px] shadow z-20 flex items-center px-4 flex justify-between items-center">
+        <!-- Logo and title -->
+        <div class="flex items-center gap-4">
+            <!-- Logo Image -->
+            <img src="{{ asset('images/Chief_images/QAC.jpeg') }}" alt="QAC Logo" class="h-[80px] w[80px] object-contain" />
+    
+            <!-- Title -->
+            <div class="pl-5 mt-2">
+                <div class="text-md text-[25px] -mb-3" style="font-family: 'Playfair Display SC', serif;">Quality Assurance Center</div>
+                <div class="text-[40px] font-bold mb-1">Document Archiving and Control System</div>
+            </div>
+        </div>
+    
+        <!-- Notification and profile -->
+        <div class="flex items-center gap-4">
+            <!-- Notification Icon -->
+        <div class="relative">
+            <button onclick="toggleDropdown()" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
+            <i class="fas fa-bell text-2xl"></i>
+            <span class="absolute top-[1px] -right-[4px] bg-red-600 text-white text-[15px] font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+            </button>
+    
+            <!-- Main Notification Dropdown -->
+            <div id="notificationDropdown" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg overflow-hidden z-50">
+            <div class="bg-yellow-400 px-4 py-2 font-bold tracking-wide pt-3 pb-3 text-xl text-white">Notifications</div>
+    
+            <!-- "All" and "Unread" Buttons + Three Dot -->
+            <div class="flex justify-between items-center px-4 py-2 relative">
+                <div class="flex gap-4">
+                <button class="font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">All</button>
+                <button class="font-bold text-gray-600 hover:text-black">Unread</button>
+                </div>
+    
+                <!-- Three Dot Button -->
+                <button id="threeDotButton" onclick="toggleThreeDotDropdown()" class="text-gray-600 hover:text-black relative">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-7 w-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                </button>
+    
+                <!-- Mini Dropdown for Three Dots -->
+                <div id="threeDotDropdown" class="hidden absolute right-0 top-10 w-48 bg-gray-200 border border-gray-300 rounded-lg shadow-lg z-50">
+                <button class="w-full text-left px-4 py-2 hover:bg-red-800 text-black hover:text-white">Mark All as Read</button>
+                <button class="w-full text-left px-4 py-2 hover:bg-red-800 text-black hover:text-white">Turn off Notification</button>
+                </div>
+            </div>
+    
+            <!-- Notifications List -->
+            <div class="divide-y divide-gray-200">
+                <!-- Notification 1 -->
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                <div class="flex-1">
+                    <p class="text-black"><strong>Kevin Mendoza</strong> requested a document.</p>
+                    <p class="text-xs text-gray-400">40 minutes ago</p>
+                </div>
+                <div class="absolute top-4 right-4 h-3 w-3 bg-red-700 rounded-full"></div>
+                </div>
+    
+                <!-- Notification 2 -->
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                <div class="flex-1">
+                    <p class="text-black"><strong>Marynhel Estorninos</strong> requested a document.</p>
+                    <p class="text-xs text-gray-400">1 day ago</p>
+                </div>
+                <div class="absolute top-4 right-4 h-3 w-3 bg-red-700 rounded-full"></div>
+                </div>
+    
+                <!-- Notification 3 -->
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                <div class="flex-1">
+                    <p class="text-gray-500"><strong>Kassandra Denise Serillano</strong> requested a document.</p>
+                    <p class="text-xs text-gray-400">10 hours ago</p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+            <!-- Settings Icon -->
+            <a href="{{ route('profile1') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fas fa-cog text-2xl"></i>
+                </a>
+        
+            <!-- User Info -->
             <div class="flex items-center gap-2">
             <div class="flex flex-col leading-tight text-white text-right">
                 <span class="font-medium">Luna C.</span>
-                <span class="text-sm text-gray-200 text-center">Special/Chief Admin</span>
+                <span class="text-sm text-gray-200 text-center">Executive</span>
             </div>
-            <img src="{{ asset('images/Chief_images/AdminProfile.png') }}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+            <img src="{{asset('images/Chief_images/AdminProfile.png')}}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
             </div>
-      </div>
-  </header> 
+        </div>
+    </header>  
 
   <!-- Sidebar -->
   <aside class="h-screen w-64  bg-white text-black p-5 fixed h-full bg-black shadow-[4px_0_6px_-1px_rgba(0,0,0,0.1)] z-10 pt-[157px] fixed top-0 left-0 h-screen z-10 overflow-y-auto"">
@@ -135,7 +196,7 @@
                   </ul>
               </ul>
           </nav>
-          <a class="absolute inset-x-6 bottom-[110px] ml-1 flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
+          <a class="absolute inset-x-6 bottom-[110px] ml-1 flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg"
                   fill="none" viewBox="0 0 24 24" stroke-width="2" 
                   stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
@@ -144,15 +205,40 @@
               </svg>
               <span class="text-red-800 text-[21px] font-bold transition-all duration-200">Bin</span>
             </a> 
-          <button class="absolute inset-x-6 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
-              <svg xmlns="http://www.w3.org/2000/svg"
-                  fill="none" viewBox="0 0 24 24" stroke-width="2" 
-                  stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
-              <path stroke-linecap="round" stroke-linejoin="round" 
-                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
-              </svg>
-              <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">Log Out</span>
-          </button>                  
+            <!-- Log Out Button Trigger -->
+                <button onclick="openLogoutModal()" 
+                    class="absolute inset-x-6 bottom-[50px] ml-2 flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke-width="2" 
+                        stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
+                    </svg>
+                    <span class="text-red-800 text-[19px] group-hover:text-red-800 group-hover:text-[20px] group-hover:font-bold transition-all duration-200">
+                    Log Out
+                    </span>
+                </button>
+
+                <!-- Logout Confirmation Modal -->
+                <div id="logoutModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+                <div class="bg-white rounded-lg shadow-lg p-8 w-[400px] text-center">
+                <h2 class="text-2xl font-bold mb-4 text-red-800">Confirm Logout</h2>
+                <p class="text-gray-700 mb-6">Are you sure you want to log out?</p>
+                <div class="flex justify-center gap-4">
+                <button onclick="closeLogoutModal()" 
+                        class="px-6 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition">
+                    Cancel
+                </button>
+                <!-- Logout form with redirect -->
+                <form id="logoutForm" method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="px-6 py-2 bg-red-800 text-white rounded-lg hover:bg-red-900 transition">
+                    Log Out
+                    </button>
+                </form>
+                </div>
+                </div>
+                </div>                 
       </aside>
 
       <div class="flex min-h-screen">
@@ -178,50 +264,210 @@
             <!-- Document List -->
             <div class="space-y-4 mt-[55px] mb-[10px]">
               <!-- Single Row -->
-              <div class="flex items-center justify-between border-b pb-[13px] pt-[5px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
+                <div class="flex items-center justify-between border-b pb-[13px] pt-[10px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
+                  <!-- Title -->
+                  <p class="text-[20px] text-black max-w-[50%] truncate">
+                    Certificate of Program Compliance (COPC Evaluation) BSBA-FM
+                  </p>
+
+                  <!-- Date, Size, and Options -->
+                  <div class="flex items-center space-x-2 text-[16px] text-gray-700"> <!-- Changed from space-x-6 to space-x-4 -->
+                    <div class="flex space-x-12 mr-16"> <!-- Tighter spacing and smaller right margin -->
+                      <span>Feb 22</span>
+                      <span>10KB</span>
+                    </div>
+
+                    <!-- Restore Button -->
+                    <button onclick="confirmRestore()" title="Restore" class="text-gray-700 hover:text-green-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-7 w-7">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-2 16c-2.05 0-3.81-1.24-4.58-3h1.71c.63.9 1.68 1.5 2.87 1.5 1.93 0 3.5-1.57 3.5-3.5S13.93 9.5 12 9.5c-1.35 0-2.52.78-3.1 1.9l1.6 1.6h-4V9l1.3 1.3C8.69 8.92 10.23 8 12 8c2.76 0 5 2.24 5 5s-2.24 5-5 5z"></path>
+                        </g>
+                      </svg>
+                    </button>
+
+                    <!-- Delete Button -->
+                    <button onclick="confirmDelete()" title="Delete" class="text-gray-700 hover:text-red-600">
+                      <svg class="h-7 w-7 stroke-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+
+              <!-- Single Row -->
+              <div class="flex items-center justify-between border-b pb-[13px] pt-[14px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
                 <!-- Title -->
                 <p class="text-[20px] text-black max-w-[50%] truncate">
                   Certificate of Program Compliance (COPC Evaluation) BSBA-FM
                 </p>
+
                 <!-- Date, Size, and Options -->
-                <div class="flex items-center space-x-6 text-[16px] text-gray-700">
-                  <span>Feb 22</span>
-                  <span>10KB</span>
-                  <button title="See More" class="text-gray-700 hover:text-black text-3xl font-bold">…</button>
+                <div class="flex items-center space-x-2 text-[16px] text-gray-700"> <!-- Changed from space-x-6 to space-x-4 -->
+                  <div class="flex space-x-12 mr-16"> <!-- Tighter spacing and smaller right margin -->
+                    <span>Feb 22</span>
+                    <span>10KB</span>
+                  </div>
+
+                  <!-- Restore Button -->
+                  <button onclick="confirmRestore()" title="Restore" class="text-gray-700 hover:text-green-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-7 w-7">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-2 16c-2.05 0-3.81-1.24-4.58-3h1.71c.63.9 1.68 1.5 2.87 1.5 1.93 0 3.5-1.57 3.5-3.5S13.93 9.5 12 9.5c-1.35 0-2.52.78-3.1 1.9l1.6 1.6h-4V9l1.3 1.3C8.69 8.92 10.23 8 12 8c2.76 0 5 2.24 5 5s-2.24 5-5 5z"></path>
+                      </g>
+                    </svg>
+                  </button>
+
+                  <!-- Delete Button -->
+                  <button onclick="confirmDelete()" title="Delete" class="text-gray-700 hover:text-red-600">
+                    <svg class="h-7 w-7 stroke-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
                 </div>
               </div>
 
               <!-- Single Row -->
-              <div class="flex items-center justify-between border-b pb-[13px] pt-[8px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
+              <div class="flex items-center justify-between border-b pb-[13px] pt-[14px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
                 <!-- Title -->
                 <p class="text-[20px] text-black max-w-[50%] truncate">
                   Certificate of Program Compliance (COPC Evaluation) BSBA-FM
                 </p>
-                <!-- Date, Size, and Options -->
-                <div class="flex items-center space-x-6 text-[16px] text-gray-700">
-                  <span>Feb 22</span>
-                  <span>10KB</span>
-                  <button title="See More" class="text-gray-700 hover:text-black text-3xl font-bold">…</button>
-                </div>
-              </div>
 
-              <!-- Single Row -->
-              <div class="flex items-center justify-between border-b pb-[13px] pt-[8px] border-gray-500 cursor-pointer px-2 rounded-lg hover:bg-gray-200">
-                <!-- Title -->
-                <p class="text-[20px] text-black max-w-[50%] truncate">
-                  Certificate of Program Compliance (COPC Evaluation) BSBA-FM
-                </p>
                 <!-- Date, Size, and Options -->
-                <div class="flex items-center space-x-6 text-[16px] text-gray-700">
-                  <span>Feb 22</span>
-                  <span>10KB</span>
-                  <button title="See More" class="text-gray-700 hover:text-black text-3xl font-bold">…</button>
+                <div class="flex items-center space-x-2 text-[16px] text-gray-700"> <!-- Changed from space-x-6 to space-x-4 -->
+                  <div class="flex space-x-12 mr-16"> <!-- Tighter spacing and smaller right margin -->
+                    <span>Feb 22</span>
+                    <span>10KB</span>
+                  </div>
+
+                  <!-- Restore Button -->
+                  <button onclick="confirmRestore()" title="Restore" class="text-gray-700 hover:text-green-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-7 w-7">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-2 16c-2.05 0-3.81-1.24-4.58-3h1.71c.63.9 1.68 1.5 2.87 1.5 1.93 0 3.5-1.57 3.5-3.5S13.93 9.5 12 9.5c-1.35 0-2.52.78-3.1 1.9l1.6 1.6h-4V9l1.3 1.3C8.69 8.92 10.23 8 12 8c2.76 0 5 2.24 5 5s-2.24 5-5 5z"></path>
+                      </g>
+                    </svg>
+                  </button>
+
+                  <!-- Delete Button -->
+                  <button onclick="confirmDelete()" title="Delete" class="text-gray-700 hover:text-red-600">
+                    <svg class="h-7 w-7 stroke-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-      
+              
+
+              <!-- Modal Container -->
+              <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-[300px] max-w-md">
+                  <h2 id="confirmationTitle" class="text-xl font-semibold mb-4 text-center"></h2>
+                  <div class="flex justify-center space-x-4">
+                    <button id="proceedButton" onclick="proceedAction()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg">Yes</button>
+                    <button onclick="closeModal()" class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg">Cancel</button>
+                  </div>
+                </div>
+              </div>
               <!-- Repeat similar rows -->
             </div>
           </div>
+          <script>
+            function openLogoutModal() {
+              document.getElementById('logoutModal').classList.remove('hidden');
+            }
+          
+            function closeLogoutModal() {
+              document.getElementById('logoutModal').classList.add('hidden');
+            }
+          
+            // Function to handle logout confirmation (this is just a placeholder)
+            function confirmLogout() {
+            alert("You have been logged out!"); 
+           // Example: window.location.href = '/logout';  <-- real logout
+           closeLogoutModal();
+           }
+
+
+           let actionType = '';
+
+            function confirmRestore() {
+              actionType = 'restore';
+              document.getElementById('confirmationTitle').innerText = "Restore this file?";
+              const proceedBtn = document.getElementById('proceedButton');
+              proceedBtn.classList.remove('bg-red-600', 'hover:bg-red-700');
+              proceedBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+              document.getElementById('confirmationModal').classList.remove('hidden');
+            }
+
+            function confirmDelete() {
+              actionType = 'delete';
+              document.getElementById('confirmationTitle').innerText = "Delete this file?";
+              const proceedBtn = document.getElementById('proceedButton');
+              proceedBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+              proceedBtn.classList.add('bg-red-600', 'hover:bg-red-700');
+              document.getElementById('confirmationModal').classList.remove('hidden');
+            }
+
+            function proceedAction() {
+              if (actionType === 'restore') {
+                alert('File has been restored!');
+                // Add restore logic here
+              } else if (actionType === 'delete') {
+                alert('File has been deleted!');
+                // Add delete logic here
+              }
+              closeModal();
+            }
+
+            function closeModal() {
+              document.getElementById('confirmationModal').classList.add('hidden');
+            }
+
+            function toggleDropdown() {
+              document.getElementById('notificationDropdown').classList.toggle('hidden');
+              // When opening notification dropdown, also close 3-dot mini-dropdown
+              document.getElementById('threeDotDropdown').classList.add('hidden');
+            }
+          
+            function toggleThreeDotDropdown() {
+              document.getElementById('threeDotDropdown').classList.toggle('hidden');
+            }
+
+              // LOGOUT SCRIPT
+              function openLogoutModal() {
+              document.getElementById('logoutModal').classList.remove('hidden');}
+
+              function closeLogoutModal() {
+              document.getElementById('logoutModal').classList.add('hidden');}
+
+              // Auto redirect after logout
+              document.getElementById('logoutForm').addEventListener('submit', function () {
+              setTimeout(function () {
+              window.location.href = "{{ route('login1') }}";
+              }, 100); // Give Laravel enough time to process the logout
+              });
+        </script>
         </main>
       </div>      
     </body>
