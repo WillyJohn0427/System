@@ -81,7 +81,6 @@ class AuthController extends Controller
         // Log the user in
         Auth::login($user);
 
-        // Redirect to the appropriate dashboard
         return redirect()->route('cdashboard');
     }
 }
