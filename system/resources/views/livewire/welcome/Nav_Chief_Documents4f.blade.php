@@ -261,7 +261,7 @@
         </button>
         <!-- New Button + Title -->
         <div>
-          <h2 class="text-2xl font-bold ml-[30px] cursor-pointer">PUP Campuses > BANSUDE, OREINTAL MINDORO</h2>
+          <h2 class="text-2xl font-bold ml-[30px] cursor-pointer">PUP Campuses > BANSUD, ORIENTAL MINDORO</h2>
         </div>
       </div>
       
