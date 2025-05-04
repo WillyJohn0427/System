@@ -241,7 +241,7 @@
                 </div>                 
             </aside>
 
-            <main class="ml-[253px] flex-1 p-8 overflow-y-auto mt-[108px]">  
+             <main class="ml-[253px] flex-1 p-8 overflow-y-auto mt-[108px]">  
                 <div class="bg-white shadow-md rounded-t-2xl rounded-b-2xl p-6 max-w-[1514px] mx-auto mt-10 px-8 ">
                   <h2 class="text-[35px] font-[700] text-gray-900">Request</h2>
               
@@ -266,7 +266,6 @@
                           <td class="px-6 py-5 space-x-[2px]">
                             <button onclick="handleReceive()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Receive</button>
                             <button onclick="handleUpload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Upload</button>
-                            <button onclick="handleSend()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Send</button>
                           </td>
                         </tr>
 
@@ -279,7 +278,6 @@
                             <td class="px-6 py-5 space-x-[2px]">
                               <button onclick="handleReceive()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Receive</button>
                               <button onclick="handleUpload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Upload</button>
-                              <button onclick="handleSend()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Send</button>
                             </td>
                           </tr>
 
@@ -292,7 +290,6 @@
                             <td class="px-6 py-5 space-x-[2px]">
                               <button onclick="handleReceive()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Receive</button>
                               <button onclick="handleUpload()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Upload</button>
-                              <button onclick="handleSend()" class="bg-white border border-gray-400 px-3 py-1 rounded text-[15px] tracking-wider font-bold text-black hover:bg-red-800 hover:text-white transition">Send</button>
                             </td>
                           </tr>
                         <!-- You can repeat the rows as needed -->
@@ -310,26 +307,23 @@
                 function handleUpload() {
                   alert("Upload button clicked!");
                 }
-              
-                function handleSend() {
-                  alert("Send button clicked!");
-                }
 
-                  
                 function openLogoutModal() {
-                document.getElementById('logoutModal').classList.remove('hidden');
-              }
-            
-              function closeLogoutModal() {
-                document.getElementById('logoutModal').classList.add('hidden');
-              }
-            
-              // Function to handle logout confirmation (this is just a placeholder)
-              function confirmLogout() {
-              alert("You have been logged out!"); 
-             // Example: window.location.href = '/logout';  <-- real logout
-             closeLogoutModal();
-             }
+                    document.getElementById('logoutModal').classList.remove('hidden');
+                  }
+                
+                  function closeLogoutModal() {
+                    document.getElementById('logoutModal').classList.add('hidden');
+                  }
+                
+
+                  // Function to handle logout confirmation (this is just a placeholder)
+                  function confirmLogout() {
+                    // Here you can put your real logout logic
+                    alert("You have been logged out!"); 
+                    // Example: window.location.href = '/logout';  <-- real logout
+                    closeLogoutModal();
+                  }
 
              function toggleDropdown() {
                 document.getElementById('notificationDropdown').classList.toggle('hidden');
