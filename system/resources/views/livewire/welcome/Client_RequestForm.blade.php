@@ -221,14 +221,14 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-20 p-4">
                             <!-- Faculty Name -->
                             <div>
-                                <label class="block text-red-800 font-semibold text-xl mb-1" for="timeframe">Faculty Name</label>
+                                <label class="block text-red-800 font-semibold text-xl mb-1" for="timeframe">Faculty Name *</label>
                                 <input type="text" id="timeframe" name="timeframe" placeholder="Juan Dela Cruz" 
                                     class="w-full px-3 py-4 border-2 border-gray-300 bg-gray-50 rounded-lg outline-red-800 hover:border-red-900">
                             </div>
 
                             <!-- Status -->
                             <div>
-                                <label class="block text-red-800 font-semibold text-xl mb-1" for="status">Status</label>
+                                <label class="block text-red-800 font-semibold text-xl mb-1" for="status">Status *</label>
                                 <div class="relative">
                                     <select id="status" name="status" class="w-full px-3 py-4 border-2 border-gray-300 bg-gray-50 rounded-lg outline-red-800 appearance-none">
                                         <option value="Urgent">Urgent</option>
@@ -249,7 +249,7 @@
                         <!-- Campus & Program -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mt-4 p-4">
                             <div>
-                                <label class="block text-red-800 font-semibold text-xl mb-1" for="campus">Campus</label>
+                                <label class="block text-red-800 font-semibold text-xl mb-1" for="campus">Campus *</label>
                                 <div class="relative">
                                     <select id="campus" name="campus" class="w-full px-3 py-4 border-2 border-gray-300 bg-gray-50 rounded-lg outline-red-800 appearance-none">
                                         <option value="selectcampuses" disabled selected class="text-gray-400">Select Campus</option>
@@ -285,7 +285,7 @@
                             </div>
 
                             <div>
-                                <label class="block text-red-800 font-medium text-xl mb-1" for="program">Program</label>
+                                <label class="block text-red-800 font-medium text-xl mb-1" for="program">Program *</label>
                                 <div class="relative">
                                     <select id="program" name="program" class="w-full px-3 py-4 border-2 border-gray-300 bg-gray-50 rounded-lg outline-red-800 appearance-none">
                                         <option value="selectcampuses" disabled selected class="text-gray-400">Select Program</option>
@@ -439,7 +439,7 @@
                         
                             <!-- Timeframe Input -->
                             <div>
-                                <label class="block text-red-800 font-semibold text-xl mb-1" for="timeframe">Timeframe</label>
+                                <label class="block text-red-800 font-semibold text-xl mb-1" for="timeframe">Timeframe *</label>
                                 <input type="text" id="timeframe" name="timeframe" placeholder="Example: April 1, 2025 / Anytime" 
                                     class="w-full px-3 py-4 border-2 border-gray-300 bg-gray-50 rounded-lg outline-red-800 hover:border-red-900">
                             </div>
