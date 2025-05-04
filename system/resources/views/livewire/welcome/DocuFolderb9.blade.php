@@ -262,7 +262,7 @@
       
         <!-- New Button + Title -->
         <div>
-          <h2 class="text-2xl font-bold ml-[30px] cursor-pointer"> PUP Campuses > MARIVELS, BATAAN</h2>
+          <h2 class="text-2xl font-bold ml-[30px] cursor-pointer"> PUP Campuses > MARIVELES, BATAAN</h2>
         </div>
       </div>
       
