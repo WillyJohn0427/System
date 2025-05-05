@@ -441,26 +441,26 @@
    closeLogoutModal();
    }
 
-   function toggleDropdown() {
-    document.getElementById('notificationDropdown').classList.toggle('hidden');
-    // When opening notification dropdown, also close 3-dot mini-dropdown
-    document.getElementById('threeDotDropdown').classList.add('hidden');
-  }
+   function toggleDN() {
+      document.getElementById('notificationDropdown').classList.toggle('hidden');
+      // When opening notification dropdown, also close 3-dot mini-dropdown
+      document.getElementById('threeDotDropdown').classList.add('hidden');
+    }
+  
+    function toggleTD() {
+      document.getElementById('threeDotDropdown').classList.toggle('hidden');
+    }
 
-  function toggleThreeDotDropdown() {
-    document.getElementById('threeDotDropdown').classList.toggle('hidden');
-  }
-
-  function openImageModal(imageSrc) {
-    document.getElementById('modalImage').src = imageSrc;
-    document.getElementById('imageModal').classList.remove('hidden');
-    document.getElementById('imageModal').classList.add('flex');
-  }
-
-  function closeImageModal() {
-    document.getElementById('imageModal').classList.remove('flex');
-    document.getElementById('imageModal').classList.add('hidden');
-  }
+    function openImageModal(imageSrc) {
+      document.getElementById('modalImage').src = imageSrc;
+      document.getElementById('imageModal').classList.remove('hidden');
+      document.getElementById('imageModal').classList.add('flex');
+    }
+    
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.remove('flex');
+      document.getElementById('imageModal').classList.add('hidden');
+    }
 
 
   // LOGOUT SCRIPT
