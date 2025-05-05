@@ -61,17 +61,45 @@
                         <input type="text" name="name" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[7px] mb-[20px] border-red-900 rounded-md" required>
 
                         <label class="block ml-[2px] font-bold text-red-900 text-md text-left">Webmail*</label>
-                        <input type="email" name="email" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[7px] mb-[20px] border-red-900 rounded-md" required>
+                        <input type="email" name="email" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[7px] mb-[20px] border-red-900 rounded-md" required placeholder="example@pup.edu.ph">
 
                         @error('email')
                             <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                         @enderror
 
+                        <!-- Password Field -->
                         <label class="block ml-[2px] font-bold text-red-900 text-md text-left">Password*</label>
-                        <input type="password" name="password" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[7px] mb-[20px] border-red-900 rounded-md" required>
+                        <div class="relative w-[350px]">
+                        <input type="password" id="passwordInput" name="password"
+                            class="w-full p-2.5 border-[2.5px] h-[50px] mt-[7px] mb-[20px] border-red-900 rounded-md pr-10" required>
+                        
+                        <svg onclick="togglePassword('passwordInput', 'eyeIcon1')" id="eyeIcon1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6 text-red-900 absolute top-[33px] right-3 transform -translate-y-1/2 cursor-pointer"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        </div>
 
+                        <!-- Confirm Password Field -->
                         <label class="block ml-[2px] font-bold text-red-900 text-md text-left">Confirm Password*</label>
-                        <input type="password" name="password_confirmation" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[7px] border-red-900 rounded-md" required>
+                        <div class="relative w-[350px]">
+                        <input type="password" id="passwordConfirmInput" name="password_confirmation"
+                            class="w-full p-2.5 border-[2.5px] h-[50px] mt-[7px] border-red-900 rounded-md pr-10" required>
+                        
+                        <svg onclick="togglePassword('passwordConfirmInput', 'eyeIcon2')" id="eyeIcon2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6 text-red-900 absolute top-[33px] right-3 transform -translate-y-1/2 cursor-pointer"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        </div>
 
                         @error('password')
                             <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
@@ -97,6 +125,32 @@
                 </div>
             </div>
         </div>
+
+        <script>
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+
+            if (input.type === "password") {
+            input.type = "text";
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.269-2.944-9.543-7a9.964 9.964 0 012.103-3.437m1.414-1.414A9.956 9.956 0 0112 5
+                    c4.478 0 8.269 2.944 9.543 7a9.964 9.964 0 01-4.297 5.569M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3l18 18" />
+            `;
+            } else {
+            input.type = "password";
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            `;
+            }
+        }
+        </script>
     </body>
 </html>
 <!-- End of Code -->
