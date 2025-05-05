@@ -26,7 +26,7 @@ new #[Layout('layouts.guest')] class extends Component
 
 
 
-<!-- Start -->
+<!-- Start eto po -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
