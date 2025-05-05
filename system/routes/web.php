@@ -77,6 +77,7 @@ Route::view('/Ctracking', 'livewire.welcome.Client_Tracking')->name('Ctracking')
 Route::view('/Cprofile', 'livewire.welcome.Client_Profile')->name('Cprofile');
 Route::view('/Cpassword', 'livewire.welcome.Client_Password')->name('Cpassword');
 
+Route::view('/reset1', 'livewire.pages.auth.Landing_ResetPass')->name('reset1');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
