@@ -10,7 +10,7 @@
     <!-- Google Font: Playfair Display SC -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
     <!-- Import for Icon -->
-    <link rel="icon" type="image/png" href="Images/QAC.png">
+    <link rel="icon" type="image/png" href="{{ asset('images/LandingPage_Images/QAC.png') }}">
     <!-- Tab/Window Title -->
     <title>PUPQAC - Document Archiving and Control System</title>
     <!-- Tailwind CSS Connection -->
@@ -20,11 +20,11 @@
     <!-- Main Body of Login Page Using Gradient Background for the Round Corners -->
     <body class="flex h-screen bg-gradient-to-t from-gray-50 to-red-800 ">
         <div class="flex w-full h-full bg-cover bg-center relative rounded-br-[90px]" 
-        style="background-image: url('Images/Background.png')";>
+        style="background-image: url('{{ asset('images/LandingPage_Images/Background.png') }}')";>
 
             <!-- Left Side Panel Container -->
             <div class="flex w-full h-full ">
-                <div class="flex-1 bg-red-900 text-white flex flex-col items-center justify-center text-center p-5 rounded-br-[90px] bg-cover bg-center relative" style="background-image: url('Images/Cover.png');">
+                <div class="flex-1 bg-red-900 text-white flex flex-col items-center justify-center text-center p-5 rounded-br-[90px] bg-cover bg-center relative" style="background-image: url('{{ asset('images/LandingPage_Images/Cover.png') }}');">
     
                     <!-- Red Transparent Overlay -->
                     <div class="absolute inset-0 bg-red-900 opacity-60 rounded-br-[90px]" ></div>
@@ -33,10 +33,10 @@
                     <div class="relative z-10 flex flex-col items-center justify-center">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <img src="Images/PUPLogo.png" alt="PUP Logo" class="w-[120px] mt-[20px]">
+                                <img src="{{ asset('images/LandingPage_Images/PUPLogo.png') }}" alt="PUP Logo" class="w-[120px] mt-[20px]">
                             </div>
                             <div>
-                                <img src="Images/QAC.png" alt="PUP Logo" class="w-[125px] mt-[35px]">
+                                <img src="{{ asset('images/LandingPage_Images/QAC.png') }}" alt="PUP Logo" class="w-[125px] mt-[35px]">
                             </div>
                         </div>
                         <h2 class="text-[30px] tracking-wider font-medium mb-[5px] mt-[20px]" style="font-family: 'Playfair Display SC', serif;">Welcome to the PUP-QAC</h2>
@@ -60,20 +60,50 @@
                             <!-- Main Container Holds Email Input Box -->
                             <div class="pl-6 pt-[60px] rounded-lg -ml-[20px]">
                                 <label class="block text-red-900 text-md font-bold text-left" >PUP Webmail*</label>
-                                <input type="email" class=" inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] border-red-900 rounded-md">
+                                <input type="email" class=" inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] border-red-900 rounded-md" required placeholder="example@pup.edu.ph">
                             </div>
 
-                            <!-- Main Container Holds Email Input Box -->
-                            <div class="pl-6 rounded-lg -ml-[20px]">
-                                <label class="block text-red-900 text-md font-bold text-left pt-[15px]" >Password*</label>
-                                <input type="email" class=" inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] border-red-900 rounded-md">
+                            @error('email')
+                            <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                            @enderror
+
+                            <!-- Password Field -->
+                            <label class="block ml-[4px] font-bold text-red-900 text-md text-left pt-[15px]">Password*</label>
+                            <div class="relative w-[350px]">
+                            <input type="password" id="passwordInput" name="password"
+                                class="w-full p-2.5 border-[2.5px] ml-[4px] h-[50px] mt-[7px] mb-[20px] border-red-900 rounded-md pr-10" required>
+                            
+                            <svg onclick="togglePassword('passwordInput', 'eyeIcon1')" id="eyeIcon1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-6 h-6 text-red-900 absolute top-[33px] right-3 transform -translate-y-1/2 cursor-pointer"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
                             </div>
 
-                            <!-- Main Container Holds Email Input Box -->
-                            <div class="pl-6 rounded-lg -ml-[20px]">
-                                <label class="block text-red-900 text-md font-bold text-left pt-[15px]" >Confirm Password*</label>
-                                <input type="email" class=" inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] border-red-900 rounded-md">
+                            <!-- Confirm Password Field -->
+                            <label class="block ml-[4px] font-bold text-red-900 text-md text-left">Confirm Password*</label>
+                            <div class="relative w-[350px]">
+                            <input type="password" id="passwordConfirmInput" name="password_confirmation"
+                                class="w-full p-2.5 border-[2.5px] ml-[4px] h-[50px] mt-[7px] border-red-900 rounded-md pr-10" required>
+                            
+                            <svg onclick="togglePassword('passwordConfirmInput', 'eyeIcon2')" id="eyeIcon2"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-6 h-6 text-red-900 absolute top-[33px] right-3 transform -translate-y-1/2 cursor-pointer"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
                             </div>
+
+                            @error('password')
+                                <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                            @enderror
 
                         <!-- Button for Password Reset Link -->
                         <div class="text-center mt-[65px] pb-[10px]">
@@ -97,5 +127,30 @@
                 </div>
             </div>
         </body>
+        <script>
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+
+            if (input.type === "password") {
+            input.type = "text";
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.269-2.944-9.543-7a9.964 9.964 0 012.103-3.437m1.414-1.414A9.956 9.956 0 0112 5
+                    c4.478 0 8.269 2.944 9.543 7a9.964 9.964 0 01-4.297 5.569M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3l18 18" />
+            `;
+            } else {
+            input.type = "password";
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            `;
+            }
+        }
+        </script>
 </html>
 <!-- End of Code -->
