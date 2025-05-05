@@ -64,9 +64,9 @@
                             </div>
 
                         <!-- Button for Password Reset Link -->
-                        <div class="text-center mt-[90px]">
+                        <a href="{{ route('reset1') }}" class="text-center mt-[90px]">
                             <button class="bg-red-900 text-white py-3 px-5 rounded-xl w-[250px] hover:bg-red-950 hover:text-white transition font-semibold">Email Password Reset Link</button>
-                        </div>
+                        </a>
                         
                         <!-- Mini Container for return Login Page Option-->
                         <div class="mt-[20px] pb-[10px]">

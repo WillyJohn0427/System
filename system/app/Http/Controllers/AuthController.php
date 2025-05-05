@@ -54,7 +54,7 @@ class AuthController extends Controller
         }
     
         // Redirect to the client dashboard for other valid emails
-        return redirect()->route('Cdashboard');
+        return redirect()->route('cdashboard');
     }
 
     public function store(Request $request)
@@ -82,5 +82,17 @@ class AuthController extends Controller
         Auth::login($user);
 
         return redirect()->route('profile2');
+    }
+
+    public function upload(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|file|max:2048', // Validate file size and type
+        ]);
+
+        $file = $request->file('file');
+        $filePath = $file->store('uploads', 'public'); // Save file to 'storage/app/public/uploads'
+
+        return back()->with('success', 'File uploaded successfully!');
     }
 }

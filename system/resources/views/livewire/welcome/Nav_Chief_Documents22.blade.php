@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -267,10 +266,26 @@
       </div>
       
       <div class="flex items-center space-x-4 mr-[30px]">
-        <button class="bg-white text-red-900 text-lg px-4 py-1.5 ml-[30px] mt-2.5 rounded-2xl font-semibold border border-red-900 flex items-center space-x-2 hover:bg-red-900 hover:text-white transition-all mb-2">
-            <span class="text-2xl leading-none -mt-[4px]">+</span>
-            <span>New</span>
-          </button>
+        <!-- New Button -->
+        <button 
+          onclick="document.getElementById('fileInput').click()" 
+          class="bg-white text-red-900 text-lg px-4 py-1.5 ml-[30px] mt-2.5 rounded-2xl font-semibold border border-red-900 flex items-center space-x-2 hover:bg-red-900 hover:text-white transition-all mb-2">
+          <span class="text-2xl leading-none -mt-[4px]">+</span>
+          <span>New</span>
+        </button>
+
+        <!-- Hidden File Input -->
+        <form id="uploadForm" method="POST" action="{{ route('uploadFile') }}" enctype="multipart/form-data">
+          @csrf
+          <input 
+            type="file" 
+            id="fileInput" 
+            name="file" 
+            class="hidden" 
+            onchange="document.getElementById('uploadForm').submit()" 
+          />
+        </form>
+
           <!-- Toggle Button (List / Grid) -->
           <button class="flex rounded-2xl overflow-hidden border border-red-900">
             <!-- List Icon (3 horizontal lines) -->

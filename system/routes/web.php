@@ -6,6 +6,7 @@ Route::post('/login', [AuthController::class, 'authenticate'])->name('login.auth
 Route::view('/', 'livewire.pages.auth.login')->name('login'); // Root URL goes to login page
 Route::view('system.test', 'livewire.pages.auth.login')->name('system.test'); // Optional alternative route
 Route::post('/register', [AuthController::class, 'store'])->name('register.store'); // Registration route
+Route::post('/upload-file', [FileController::class, 'upload'])->name('uploadFile'); // File upload route
 
 Route::view('/dashboard', 'dashboard')->middleware('auth')->name('dashboard');
 Route::view('/documents', 'livewire.welcome.Nav_Chief_Documents')->name('documents');
