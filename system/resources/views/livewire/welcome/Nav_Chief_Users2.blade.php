@@ -166,7 +166,7 @@
 
                             <!-- Users -->
                             <li class="mb-4">
-                                <a href="#" class="flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
+                                <a href="{{ route('users2') }}" class="flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
                                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800 ml-[3px]" viewBox="0 0 24 24">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                                     <circle cx="9" cy="7" r="4" />
