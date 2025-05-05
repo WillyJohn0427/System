@@ -157,7 +157,7 @@
 
                         <!-- Events -->
                         <li class="mb-4">
-                            <a href="#" class="flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
+                            <a href="{{ route('event') }}" class="flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0.3" stroke="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800 ml-[3px]" viewBox="0 0 24 24">
                                 <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
                                 <span class="text-red-800 text-[21px] font-bold transition-all duration-200">Events</span>
