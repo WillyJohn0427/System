@@ -19,42 +19,101 @@
     <body class="bg-gray-100">
       <!-- Header -->
       <header class="bg-red-900 text-white p-4 pl-12 fixed w-full top-0 fixed top-0 left-0 right-0 h-[130px] shadow z-20 flex items-center px-4 flex justify-between items-center">
-        <!-- Logo and title -->
-        <div class="flex items-center gap-4">
-            <!-- Logo Image -->
-            <img src="{{ asset('images/Client_images/QAC.jpeg') }}" alt="QAC Logo" class="h-[80px] w[80px] object-contain" />
-  
-            <!-- Title -->
-            <div class="pl-5 mt-2">
-              <div class="text-md text-[25px] -mb-3" style="font-family: 'Playfair Display SC', serif;">Quality Assurance Center</div>
-                <div class="text-[40px] font-bold mb-1">Document Archiving and Control System</div>
-            </div>
-        </div>
-  
-        <!-- Notification and profile -->
-        <div class="flex items-center gap-4">
-            <!-- Notification Icon -->
-            <button class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
-              <i class="fas fa-bell text-2xl"></i>
-              <!-- Notification dot (optional) -->
-              <!--<span class="absolute top-2 right-2 w-2 h-2 bg-red-700 rounded-full"></span>-->
-            </button>
+            <!-- Logo and title -->
+            <div class="flex items-center gap-4">
+                <!-- Logo Image -->
+                <img src="{{asset('images/Client_images/QAC.jpeg')}}" alt="QAC Logo" class="h-[80px] w[80px] object-contain" />
         
-            <!-- Settings Icon -->
-            <button class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition">
-              <i class="fas fa-cog text-2xl"></i>
-            </button>
-        
-            <!-- User Info -->
-            <div class="flex items-center gap-2">
-              <div class="flex flex-col leading-tight text-white text-right">
-                <span class="font-medium">Nabila A.</span>
-                <span class="text-sm text-gray-200 text-center">Client</span>
-              </div>
-              <img src="{{ asset('images/Client_images/Profile.jpeg') }}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+                <!-- Title -->
+                <div class="pl-5 mt-2">
+                    <div class="text-md text-[25px] -mb-3" style="font-family: 'Playfair Display SC', serif;">Quality Assurance Center</div>
+                    <div class="text-[40px] font-bold mb-1">Document Archiving and Control System</div>
+                </div>
             </div>
-          </div>
-      </header>
+        
+            <!-- Notification and profile -->
+            <div class="flex items-center gap-4">
+                <!-- Notification Icon -->
+            <div class="relative">
+                <button onclick="toggleDropdown()" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition relative">
+                <i class="fas fa-bell text-2xl"></i>
+                <span class="absolute top-[1px] -right-[4px] bg-red-600 text-white text-[15px] font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+                </button>
+        
+                <!-- Main Notification Dropdown -->
+                <div id="notificationDropdown" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg overflow-hidden z-50">
+                <div class="bg-yellow-400 px-4 py-2 font-bold tracking-wide pt-3 pb-3 text-xl text-white">Notifications</div>
+        
+                <!-- "All" and "Unread" Buttons + Three Dot -->
+                <div class="flex justify-between items-center px-4 py-2 relative">
+                    <div class="flex gap-4">
+                    <button class="font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">All</button>
+                    <button class="font-bold text-gray-600 hover:text-black">Unread</button>
+                    </div>
+        
+                    <!-- Three Dot Button -->
+                    <button id="threeDotButton" onclick="toggleThreeDotDropdown()" class="text-gray-600 hover:text-black relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-7 w-7">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    </button>
+        
+                    <!-- Mini Dropdown for Three Dots -->
+                    <div id="threeDotDropdown" class="hidden absolute right-0 top-10 w-48 bg-gray-200 border border-gray-300 rounded-lg shadow-lg z-50">
+                    <button class="w-full text-left px-4 py-2 hover:bg-red-800 text-black hover:text-white">Mark All as Read</button>
+                    <button class="w-full text-left px-4 py-2 hover:bg-red-800 text-black hover:text-white">Turn off Notification</button>
+                    </div>
+                </div>
+        
+                <!-- Notifications List -->
+                <div class="divide-y divide-gray-200">
+                    <!-- Notification 1 -->
+                    <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                    <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                    <div class="flex-1">
+                        <p class="text-black"><strong>Kevin Mendoza</strong> requested a document.</p>
+                        <p class="text-xs text-gray-400">40 minutes ago</p>
+                    </div>
+                    <div class="absolute top-4 right-4 h-3 w-3 bg-red-700 rounded-full"></div>
+                    </div>
+        
+                    <!-- Notification 2 -->
+                    <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                    <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                    <div class="flex-1">
+                        <p class="text-black"><strong>Marynhel Estorninos</strong> requested a document.</p>
+                        <p class="text-xs text-gray-400">1 day ago</p>
+                    </div>
+                    <div class="absolute top-4 right-4 h-3 w-3 bg-red-700 rounded-full"></div>
+                    </div>
+        
+                    <!-- Notification 3 -->
+                    <div class="flex items-center px-4 py-3 hover:bg-gray-100 cursor-pointer relative">
+                    <img src="{{asset('images/Client_images/Profile.jpeg')}}" alt="User Avatar" class="rounded-full h-10 w-10 object-cover mr-3">
+                    <div class="flex-1">
+                        <p class="text-gray-500"><strong>Kassandra Denise Serillano</strong> requested a document.</p>
+                        <p class="text-xs text-gray-400">10 hours ago</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+                <!-- Settings Icon -->
+                <a href="{{ route('Cprofile') }}" class="bg-white text-red-900 rounded-full h-14 w-14 hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fas fa-cog text-2xl"></i>
+                </a>
+            
+                <!-- User Info -->
+                <div class="flex items-center gap-2">
+                <div class="flex flex-col leading-tight text-white text-right">
+                    <span class="font-medium">Nabila A.</span>
+                    <span class="text-sm text-gray-200 text-center">Client</span>
+                </div>
+                <img src="{{asset('images/Client_images/Profile.jpeg')}}" class="rounded-full h-14 w-14 object-cover" alt="User Avatar">
+                </div>
+            </div>
+        </header>
     
         <div class="flex h-screen">
           <!-- Sidebar -->
@@ -147,8 +206,12 @@
                 <p class="mt-5 text-[25px]">You can request any document records from Quality</p>
                 <p class="mb-20 text-[25px]">Assurance Center <strong>online</strong>.</p>
             
-                <a href="{{ route('Cform') }}" class="mt-4 px-6 py-3 bg-red-800 text-white rounded-md flex items-center gap-2 font-semibold tracking-wider hover:bg-red-900 transition-all duration-200 shadow-md" style="box-shadow: inset 0 3px 6px rgba(255,255,255,0.15), 0 4px 6px rgba(0,0,0,0.3);">
-                  REQUEST NOW <span class="text-4xl -mt-3 ml-2">&rsaquo;</span></a>
+                <a href="{{ route('Cform') }}" 
+                  class="mt-4 px-6 py-3 bg-red-800 text-white rounded-md flex items-center gap-2 font-semibold tracking-wider hover:bg-red-900 transition-all duration-200 shadow-md text-md"
+                  style="box-shadow: inset 0 3px 6px rgba(255,255,255,0.15), 0 4px 6px rgba(0,0,0,0.3); width: fit-content;">
+                  REQUEST NOW 
+                  <span class="text-4xl ml-2 -mt-3">&rsaquo;</span>
+                </a>
 
               <h2 class="mt-56 text-lg font-bold text-red-900 flex items-center gap-2 ">Recent
                 <i class="fas fa-clock text-red-900 text-base"></i>
@@ -220,6 +283,14 @@
             
                   function closeLogoutModal() {
                   document.getElementById('logoutModal').classList.add('hidden');}
+
+                    function toggleDropdown() {
+                  document.getElementById('notificationDropdown').classList.toggle('hidden');
+                  // When opening notification dropdown, also close 3-dot mini-dropdown
+                  document.getElementById('threeDotDropdown').classList.add('hidden');}
+                            
+                  function toggleThreeDotDropdown() {
+                  document.getElementById('threeDotDropdown').classList.toggle('hidden');}
             
                   // Auto redirect after logout
                   document.getElementById('logoutForm').addEventListener('submit', function () {
