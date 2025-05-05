@@ -129,7 +129,7 @@
                         <ul>
                             <!-- Dashboard -->
                             <li class="mb-4 mt-[28px]">
-                            <a href="#" class="flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
+                            <a href="{{ route('cdashboard') }}" class="flex items-center space-x-4 p-2 border-l-4 border-transparent group transition duration-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
                                     <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zm0 10h8v8h-8v-8zm-10 0h8v8H3v-8z" />
                                 </svg>
