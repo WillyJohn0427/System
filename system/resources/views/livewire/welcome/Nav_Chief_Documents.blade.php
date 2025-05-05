@@ -138,7 +138,7 @@
 
                             <!-- Document -->
                             <li class="mb-4">
-                              <a href="#" class="flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
+                              <a href="{{ route('documents') }}" class="flex items-center space-x-4 p-2 border-l-4 border-red-800 group transition duration-200">
                                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-8 h-8 text-red-800 group-hover:text-red-800" viewBox="0 0 24 24">
                                       <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.83a2 2 0 0 0-.59-1.42l-4.83-4.83A2 2 0 0 0 13.17 1H6zm7 0v5h5L13 2zM8 10h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>
                                   <span class="text-red-800 text-[21px] font-bold transition-all duration-200">Documents</span>
