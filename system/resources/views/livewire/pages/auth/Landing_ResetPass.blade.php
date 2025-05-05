@@ -60,7 +60,7 @@
                             <!-- Main Container Holds Email Input Box -->
                             <div class="pl-6 pt-[60px] rounded-lg -ml-[20px]">
                                 <label class="block text-red-900 text-md font-bold text-left" >PUP Webmail*</label>
-                                <input type="email" class=" inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] border-red-900 rounded-md" required placeholder="example@pup.edu.ph">
+                                <input type="email" class=" inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] border-red-900 rounded-md" required placeholder="Enter your Webmail.">
                             </div>
 
                             @error('email')
