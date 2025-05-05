@@ -72,8 +72,8 @@ new #[Layout('layouts.guest')] class extends Component
                     </div>
                 </div>
             
-                <!-- Main Gray Background Container. -->
-                <div class="flex-1.1 pl-[1px] bg-gray-100 flex flex-col items-center justify-center rounded-tl-[80px] p-6 pt-[35.5px] pb-[40px]">
+               <!-- Main Gray Background Container. -->
+               <div class="flex-1.1 pl-[1px] bg-gray-100 flex flex-col items-center justify-center rounded-tl-[80px] p-6 pt-[35.5px] pb-[40px]">
 
                 <!-- Upper Container for "Log In to your Account" Title. -->
                 <div class="bg-gray-200 p-6 mr-[70px] ml-[100px] flex justify-center items-center rounded-t-2xl w-[550px] h-[105px] md:drop-shadow-lg mb-[2px]">
@@ -86,15 +86,28 @@ new #[Layout('layouts.guest')] class extends Component
                     <div class="bg-white pt-[93px] ml-[100px] pb-[41.5px] pr-[100px] pl-[100px] mr-[70px] drop-shadow-md md:drop-shadow-lg rounded-b-2xl rounded-t-2xl w-[550px] text-center mb-[20px] -mt-[10px]">
                     <label class="block ml-[2px] text-red-900 text-md font-bold mb-1 text-left">PUP Webmail*</label>
                     <input type="email" name="email" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] border-red-900 rounded-md mb-2" required placeholder="example@pup.edu.ph">
-
+                    
                     <!-- Display error for email -->
                     @error('email')
                         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
 
                     <label class="block ml-[2px] text-red-900 text-md font-bold mb-1 mt-[25px] text-left">Password*</label>
-                    <input type="password" name="password" class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] mb-[15px] border-red-900 rounded-md" required>
-
+                    <div class="relative w-[350px]">
+                    <input type="password" name="password" id="passwordInput"
+                    class="inline-block w-[350px] p-2.5 border-[2.5px] h-[50px] mt-[10px] mb-[15px] border-red-900 rounded-md" required>
+                    <!-- Eye Icon -->
+                    <button type="button" onclick="togglePassword()" 
+                            class="absolute top-[22px] right-3 text-red-900 cursor-pointer">
+                        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                            stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </button>
+                    </div>
                     <!-- Display error for password -->
                     @error('password')
                         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
@@ -120,6 +133,31 @@ new #[Layout('layouts.guest')] class extends Component
                     <p class="text-xs mt-[20px]">&copy; 2025 Polytechnic University of the Philippines. All Rights Reserved.</p>
                 </div>
             </div>
+
+            <script>
+            function togglePassword() {
+                const password = document.getElementById("passwordInput");
+                const eye = document.getElementById("eyeIcon");
+                
+                if (password.type === "password") {
+                password.type = "text";
+                eye.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.269-2.944-9.543-7a9.964 9.964 0 012.103-3.437m1.414-1.414A9.956 9.956 0 0112 5c4.478 0 8.269 2.944 9.543 7a9.964 9.964 0 01-4.297 5.569M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 3l18 18" />
+                `;
+                } else {
+                password.type = "password";
+                eye.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                `;
+                }
+            }
+            </script>
         </body>
 </html>
 <!-- End of Code -->
