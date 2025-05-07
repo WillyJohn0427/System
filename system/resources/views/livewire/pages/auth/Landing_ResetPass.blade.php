@@ -49,7 +49,7 @@
                 
                     <!-- Upper Container for Forgot Your Password Title  -->
                     <div class="bg-gray-200 p-6 mr-[70px] -mt-[23px] flex justify-center items-center rounded-t-2xl w-[550px] min-h-[105px] md:drop-shadow-lg ">
-                        <div class="flex-1 text-center text-[28px] tracking-[2px] font-bold text-red-900">Reset Password</div>
+                        <div class="flex-1 text-center text-[28px] tracking-[1px] font-bold text-red-900">Reset Password</div>
                     </div>
         
                         <!-- Main Container Holds Forgor Password Box -->
